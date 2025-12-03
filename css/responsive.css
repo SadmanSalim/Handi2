@@ -1,3 +1,15 @@
+/* General responsive image rules */
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Prevent horizontal overflow */
+.page-wrapper,
+.auto-container {
+	overflow-x: hidden;
+}
+
 @media only screen and (max-width: 7000px){
 	.page-wrapper{
 		overflow:hidden;	
@@ -157,13 +169,32 @@
 		padding-left: 30px;
 	}
 
+	.reserve-section .reserv-col {
+		order: 1;
+		position: relative;
+		z-index: 3;
+		width: 100%;
+	}
+	
 	.reserve-section .reserv-col .inner{
 		padding: 40px 20px 30px;
+		position: relative;
+		z-index: 3;
+		background-color: var(--color-five);
 	}
 
+	.reserve-section .info-col {
+		order: 2;
+		position: relative;
+		z-index: 1;
+		width: 100%;
+	}
+	
 	.reserve-section .info-col .inner{
 		padding-top: 40px;
 		padding-bottom: 30px;
+		position: relative;
+		z-index: 1;
 	}
 
 	.team-section .row .team-block,
@@ -260,6 +291,19 @@
 }
 
 @media only screen and (max-width: 991px){
+	
+	/* General image responsive fixes */
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+	
+	/* Fix container overflow */
+	.auto-container {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	
 	.header-top .top-left{
 		display: none;
 	}
@@ -286,8 +330,68 @@
 		margin-left: 20px;
 	}
 
+	/* Fix navbar alignment on tablet */
+	.main-header .main-box {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+	}
+	
+	.main-header .main-box .logo-box {
+		flex: 0 0 auto;
+		padding: 10px 0;
+	}
+	
 	.main-header .main-box .logo-box .logo img{
-		height: 150px;
+		max-width: 100%;
+		height: auto;
+		max-height: 130px;
+	}
+	
+	/* Fix nav-toggler alignment on tablet */
+	.main-header .nav-toggler {
+		margin-top: 0;
+		display: flex;
+		align-items: center;
+	}
+	
+	.main-header .nav-toggler button {
+		margin-top: 0;
+	}
+	
+	/* Fix offer block images - make all same size on tablet */
+	.we-offer-section .offer-block .inner-box .image {
+		height: 320px;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	.offer-block .inner-box .image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+	
+	/* Fix story section images */
+	.story-section .image-col .images img {
+		width: 100%;
+		height: auto;
+	}
+	
+	/* Fix special offer images */
+	.offer-block-two .inner-box .image img {
+		width: 100%;
+		height: auto;
+	}
+	
+	/* Fix news block images */
+	.news-block .image-box .image img {
+		width: 100%;
+		height: auto;
 	}
 
 	.banner-section .slide-item h1,
@@ -565,6 +669,42 @@
 		padding-top: 70px;
 		padding-bottom: 70px;
 	}
+	
+	/* Fix reservation section order on tablet - form before image */
+	.reserve-section .outer-box {
+		position: relative;
+		z-index: 2;
+		top: 0 !important;
+		margin-bottom: 0 !important;
+		margin-top: 50px;
+	}
+	
+	.reserve-section .outer-box > .row {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		z-index: 2;
+	}
+	
+	.reserve-section .reserv-col {
+		order: 1;
+		width: 100%;
+		position: relative;
+		z-index: 3;
+	}
+	
+	.reserve-section .reserv-col .inner {
+		position: relative;
+		z-index: 3;
+		background-color: var(--color-five);
+	}
+	
+	.reserve-section .info-col {
+		order: 2;
+		width: 100%;
+		position: relative;
+		z-index: 1;
+	}
 
 	.reserve-section.style-two .info-col .inner{
 		padding-top: 50px;
@@ -638,6 +778,182 @@
 }
 
 @media only screen and (max-width: 767px){
+	
+	/* Fix navbar alignment and logo size on mobile */
+	.main-header .main-box {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 10px 0;
+		gap: 15px;
+		width: 100%;
+	}
+	
+	.main-header .main-box .logo-box {
+		flex: 0 0 auto;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		flex-shrink: 0;
+	}
+	
+	/* Make logo bigger on mobile */
+	.main-header .main-box .logo-box .logo img{
+		max-width: 100%;
+		height: auto;
+		max-height: 140px;
+		width: auto;
+	}
+	
+	/* Fix nav-box alignment - ensure menu button is on the right */
+	.main-header .nav-box {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		flex: 0 0 auto;
+		gap: 10px;
+		margin-left: auto;
+	}
+	
+	/* Fix nav-toggler (menu button) alignment - right align */
+	.main-header .nav-toggler {
+		position: relative;
+		float: none;
+		margin: 0;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		flex: 0 0 auto;
+		margin-left: auto;
+	}
+	
+	.main-header .nav-toggler button {
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0;
+		margin: 0;
+	}
+	
+	/* Reduce fixed header height on mobile - medium size */
+	.main-header.fixed-header .header-upper {
+		min-height: 65px;
+		padding: 0;
+	}
+	
+	.fixed-header .main-box {
+		padding: 8px 0;
+		gap: 12px;
+	}
+	
+	.fixed-header .main-box .logo-box .logo img {
+		max-height: 55px;
+	}
+	
+	.fixed-header .nav-box {
+		min-height: auto;
+	}
+	
+	.fixed-header .nav-toggler button {
+		width: 38px;
+		height: 38px;
+		line-height: 38px;
+	}
+	
+	/* Fix all images to be responsive */
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+	
+	/* Fix offer block images - make all same size on mobile */
+	.we-offer-section .offer-block .inner-box .image {
+		height: 280px;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	.offer-block .inner-box .image img,
+	.we-offer-section .offer-block .inner-box .image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+	
+	/* Fix story section images */
+	.story-section .image-col .images img,
+	.story-section .image-col .images .image img {
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+	}
+	
+	.story-section .image-col .images {
+		padding-left: 0;
+		overflow: hidden;
+	}
+	
+	.story-section .image-col .images .image:nth-child(2) {
+		position: relative !important;
+		left: 0 !important;
+		bottom: 0 !important;
+		width: 100% !important;
+		margin-top: 20px;
+	}
+	
+	/* Fix special offer images */
+	.offer-block-two .inner-box .image img,
+	.special-offer .offer-block-two .inner-box .image img {
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+	}
+	
+	/* Fix news block images */
+	.news-block .image-box .image img,
+	.news-section .news-block .image-box .image img {
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+	}
+	
+	/* Fix testimonials images */
+	.testimonials-section .testi-thumbs .slide-item .image img {
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+	}
+	
+	/* Fix background images */
+	.banner-section .slide-item .image-layer,
+	.testimonials-section .image-layer,
+	.intro-section .image-layer,
+	.main-footer .image-layer {
+		background-size: cover;
+		background-position: center center;
+	}
+	
+	/* Fix container overflow */
+	.auto-container,
+	.page-wrapper {
+		overflow-x: hidden;
+	}
+	
+	.row {
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+	
+	[class*="col-"] {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
 	
 	.banner-section .swiper-button-prev,
 	.banner-section .swiper-button-next{
@@ -778,6 +1094,47 @@
 	.main-header .header-upper .links-box{
 		margin-left:0px;
 	}
+	
+	/* Fix fixed header navbar alignment and reduce height on mobile */
+	.main-header.fixed-header .header-upper {
+		min-height: 50px;
+		padding: 0;
+	}
+	
+	.fixed-header .main-box {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 5px 0;
+		gap: 10px;
+	}
+	
+	.fixed-header .main-box .logo-box {
+		padding: 0;
+		min-height: auto;
+	}
+	
+	.fixed-header .main-box .logo-box .logo img {
+		max-height: 45px;
+	}
+	
+	.fixed-header .nav-box {
+		justify-content: flex-end;
+		margin-left: auto;
+		min-height: auto;
+	}
+	
+	.fixed-header .nav-toggler {
+		margin-top: 0;
+		margin-left: auto;
+		justify-content: flex-end;
+	}
+	
+	.fixed-header .nav-toggler button {
+		width: 35px;
+		height: 35px;
+		line-height: 35px;
+	}
 
 	.featured-links .row .link-block.alternate{
 		order: 12;
@@ -834,11 +1191,156 @@
 	.intro-section .separator {
 	    margin-top: var(--margin-top-20);
 	    margin-bottom: var(--margin-bottom-20);
-	}	
+	}
+	
+	/* Fix we-offer section images - make all same size on mobile */
+	.we-offer-section .offer-block .inner-box .image {
+		overflow: hidden;
+		height: 280px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0;
+	}
+	
+	.we-offer-section .offer-block .inner-box .image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+	
+	/* Fix special offer carousel images */
+	.special-offer .dish-gallery-slider .offer-block-two .inner-box .image img {
+		width: 100%;
+		height: auto;
+		max-width: 100%;
+	}
+	
+	/* Fix reservation section - ensure form appears before image on mobile */
+	.reserve-section .outer-box {
+		position: relative;
+		z-index: 2;
+		top: 0 !important;
+		margin-bottom: 0 !important;
+		margin-top: 50px;
+	}
+	
+	.reserve-section .outer-box > .row {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		z-index: 2;
+	}
+	
+	.reserve-section .reserv-col {
+		order: 1;
+		margin-bottom: 30px;
+		position: relative;
+		z-index: 3;
+		width: 100%;
+	}
+	
+	.reserve-section .reserv-col .inner {
+		position: relative;
+		z-index: 3;
+		background-color: var(--color-five);
+		padding: 40px 20px 30px;
+	}
+	
+	.reserve-section .info-col {
+		order: 2;
+		margin-bottom: 30px;
+		position: relative;
+		z-index: 1;
+		width: 100%;
+	}
+	
+	.reserve-section .info-col .img-layer {
+		position: relative;
+		z-index: 1;
+	}
+	
+	/* Fix footer images */
+	.main-footer .info-col .logo img {
+		max-width: 150px;
+		height: auto;
+	}
 
 }
 
 @media only screen and (max-width: 599px){
+	
+	/* Fix navbar alignment and logo size on smaller mobile */
+	.main-header .main-box {
+		padding: 8px 0;
+		gap: 10px;
+	}
+	
+	/* Make logo bigger on smaller mobile */
+	.main-header .main-box .logo-box .logo img{
+		max-height: 130px;
+		max-width: 100%;
+		height: auto;
+		width: auto;
+	}
+	
+	/* Reduce fixed header height on smaller mobile - medium size */
+	.main-header.fixed-header .header-upper {
+		min-height: 60px;
+	}
+	
+	.fixed-header .main-box {
+		padding: 7px 0;
+	}
+	
+	.fixed-header .main-box .logo-box .logo img {
+		max-height: 50px;
+	}
+	
+	/* Ensure menu button stays right aligned */
+	.main-header .nav-box {
+		justify-content: flex-end;
+		margin-left: auto;
+	}
+	
+	.main-header .nav-toggler {
+		margin-left: auto;
+		justify-content: flex-end;
+	}
+	
+	/* Fix nav-toggler button size */
+	.main-header .nav-toggler button {
+		width: 38px;
+		height: 38px;
+		line-height: 38px;
+	}
+	
+	.fixed-header .nav-toggler button {
+		width: 34px;
+		height: 34px;
+		line-height: 34px;
+	}
+	
+	/* Additional mobile image fixes */
+	
+	.offer-block .inner-box .image,
+	.offer-block-two .inner-box .image,
+	.news-block .image-box .image {
+		overflow: hidden;
+	}
+	
+	.story-section .image-col .round-stamp {
+		right: 0;
+		top: 0;
+		transform: scale(0.7);
+	}
+	
+	.story-section .image-col .images .image:nth-child(2) {
+		width: 100% !important;
+		margin-top: 15px;
+	}
+	
 	.main-header .header-upper .links-box .link:first-child{
 		display: none;
 	}
@@ -979,6 +1481,97 @@
 }
 
 @media only screen and (max-width: 479px) {
+	
+	/* Fix navbar alignment and logo size on extra small mobile */
+	.main-header .main-box {
+		padding: 8px 0;
+		gap: 8px;
+	}
+	
+	/* Make logo bigger on extra small mobile */
+	.main-header .main-box .logo-box .logo img{
+		max-height: 120px;
+		max-width: 100%;
+		height: auto;
+		width: auto;
+	}
+	
+	/* Reduce fixed header height on extra small mobile - medium size */
+	.main-header.fixed-header .header-upper {
+		min-height: 55px;
+	}
+	
+	.fixed-header .main-box {
+		padding: 6px 0;
+	}
+	
+	.fixed-header .main-box .logo-box .logo img {
+		max-height: 45px;
+	}
+	
+	/* Ensure menu button stays right aligned */
+	.main-header .nav-box {
+		justify-content: flex-end;
+		margin-left: auto;
+	}
+	
+	.main-header .nav-toggler {
+		margin-left: auto;
+		justify-content: flex-end;
+	}
+	
+	/* Fix nav-toggler button size */
+	.main-header .nav-toggler button {
+		width: 36px;
+		height: 36px;
+		line-height: 36px;
+	}
+	
+	.fixed-header .nav-toggler button {
+		width: 32px;
+		height: 32px;
+		line-height: 32px;
+	}
+	
+	/* Extra small mobile image fixes */
+	
+	/* Make we-offer section images same size on extra small mobile */
+	.we-offer-section .offer-block .inner-box .image {
+		height: 230px;
+		padding: 0;
+	}
+	
+	.we-offer-section .offer-block .inner-box .image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+		display: block;
+	}
+	
+	.offer-block-two .inner-box .image img,
+	.news-block .image-box .image img {
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+	
+	.story-section .image-col .images {
+		padding-left: 0;
+	}
+	
+	.story-section .image-col .images .image {
+		margin-bottom: 15px;
+	}
+	
+	.story-section .image-col .images .image:nth-child(2) {
+		position: relative !important;
+		left: 0 !important;
+		bottom: 0 !important;
+		width: 100% !important;
+		margin-top: 15px;
+	}
+	
 	.banner-section .slide-item h1,
 	h1,
 	.intro-section .fact-counter .count-box,
