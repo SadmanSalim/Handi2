@@ -169,32 +169,13 @@ img {
 		padding-left: 30px;
 	}
 
-	.reserve-section .reserv-col {
-		order: 1;
-		position: relative;
-		z-index: 3;
-		width: 100%;
-	}
-	
 	.reserve-section .reserv-col .inner{
 		padding: 40px 20px 30px;
-		position: relative;
-		z-index: 3;
-		background-color: var(--color-five);
 	}
 
-	.reserve-section .info-col {
-		order: 2;
-		position: relative;
-		z-index: 1;
-		width: 100%;
-	}
-	
 	.reserve-section .info-col .inner{
 		padding-top: 40px;
 		padding-bottom: 30px;
-		position: relative;
-		z-index: 1;
 	}
 
 	.team-section .row .team-block,
@@ -668,42 +649,6 @@ img {
 	.reserve-section.style-two{
 		padding-top: 70px;
 		padding-bottom: 70px;
-	}
-	
-	/* Fix reservation section order on tablet - form before image */
-	.reserve-section .outer-box {
-		position: relative;
-		z-index: 2;
-		top: 0 !important;
-		margin-bottom: 0 !important;
-		margin-top: 50px;
-	}
-	
-	.reserve-section .outer-box > .row {
-		display: flex;
-		flex-direction: column;
-		position: relative;
-		z-index: 2;
-	}
-	
-	.reserve-section .reserv-col {
-		order: 1;
-		width: 100%;
-		position: relative;
-		z-index: 3;
-	}
-	
-	.reserve-section .reserv-col .inner {
-		position: relative;
-		z-index: 3;
-		background-color: var(--color-five);
-	}
-	
-	.reserve-section .info-col {
-		order: 2;
-		width: 100%;
-		position: relative;
-		z-index: 1;
 	}
 
 	.reserve-section.style-two .info-col .inner{
@@ -1217,48 +1162,10 @@ img {
 		max-width: 100%;
 	}
 	
-	/* Fix reservation section - ensure form appears before image on mobile */
-	.reserve-section .outer-box {
-		position: relative;
-		z-index: 2;
-		top: 0 !important;
-		margin-bottom: 0 !important;
-		margin-top: 50px;
-	}
-	
-	.reserve-section .outer-box > .row {
-		display: flex;
-		flex-direction: column;
-		position: relative;
-		z-index: 2;
-	}
-	
-	.reserve-section .reserv-col {
-		order: 1;
-		margin-bottom: 30px;
-		position: relative;
-		z-index: 3;
-		width: 100%;
-	}
-	
-	.reserve-section .reserv-col .inner {
-		position: relative;
-		z-index: 3;
-		background-color: var(--color-five);
-		padding: 40px 20px 30px;
-	}
-	
+	/* Fix reservation section */
+	.reserve-section .reserv-col,
 	.reserve-section .info-col {
-		order: 2;
 		margin-bottom: 30px;
-		position: relative;
-		z-index: 1;
-		width: 100%;
-	}
-	
-	.reserve-section .info-col .img-layer {
-		position: relative;
-		z-index: 1;
 	}
 	
 	/* Fix footer images */
@@ -1466,8 +1373,87 @@ img {
 	}
 
 	.banner-section .slide-item .content-box{
-		padding-top: 130px;
-		height: 600px;
+		padding-top: 60px;
+		padding-bottom: 30px;
+		height: 70vh;
+		min-height: 70vh;
+	}
+	
+	.banner-section .slide-item{
+		height: 70vh;
+		max-height: 70vh;
+	}
+	
+	.banner-section .slide-item .image-layer{
+		height: 70vh;
+		max-height: 70vh;
+	}
+	
+	.banner-section .slide-item .content-box{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	.banner-section .slide-item .content{
+		display: block;
+		width: 100%;
+		position: relative;
+		z-index: 10;
+	}
+	
+	.banner-section .slide-item .inner{
+		padding: 0 20px;
+		width: 100%;
+		max-width: 100%;
+	}
+	
+	.banner-section .slide-item h1{
+		font-size: 32px !important;
+		line-height: 1.2em !important;
+		margin-bottom: 12px !important;
+		opacity: 1 !important;
+		visibility: visible !important;
+		transform: translateY(0) !important;
+		color: #fff;
+		text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+	}
+	
+	.banner-section .slide-item .text{
+		font-size: 14px !important;
+		margin-top: 10px !important;
+		margin-bottom: 15px !important;
+		opacity: 1 !important;
+		visibility: visible !important;
+		transform: translateY(0) !important;
+		color: #fff;
+		text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+		line-height: 1.5em;
+	}
+	
+	.banner-section .slide-item .subtitle{
+		font-size: 11px !important;
+		margin-bottom: 10px !important;
+		opacity: 1 !important;
+		visibility: visible !important;
+		transform: translateY(0) !important;
+		color: var(--main-color);
+		text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+	}
+	
+	.banner-section .slide-item .pattern-image{
+		width: 70px !important;
+		margin: 10px auto 15px !important;
+		opacity: 1 !important;
+		visibility: visible !important;
+		transform: translateY(0) !important;
+	}
+	
+	.banner-section .slide-item .links-box{
+		padding-top: 15px !important;
+		opacity: 1 !important;
+		visibility: visible !important;
+		transform: translateY(0) !important;
 	}
 
 	.reservation-contactform .title-box .text.desc {
@@ -1581,7 +1567,92 @@ img {
 	}
 
 	.banner-section .slide-item .content-box{
-		height: 600px;
+		height: 70vh;
+		padding-top: 50px;
+		padding-bottom: 20px;
+		min-height: 70vh;
+	}
+	
+	.banner-section .slide-item{
+		height: 70vh;
+		max-height: 70vh;
+	}
+	
+	.banner-section .slide-item .image-layer{
+		height: 70vh;
+		max-height: 70vh;
+	}
+	
+	.banner-section .slide-item .content-box{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	.banner-section .slide-item .content{
+		display: block;
+		width: 100%;
+		position: relative;
+		z-index: 10;
+	}
+	
+	.banner-section .slide-item .inner{
+		padding: 0 15px;
+		width: 100%;
+		max-width: 100%;
+	}
+	
+	.banner-section .slide-item h1{
+		font-size: 28px !important;
+		line-height: 1.2em !important;
+		margin-bottom: 10px !important;
+		opacity: 1 !important;
+		visibility: visible !important;
+		transform: translateY(0) !important;
+		color: #fff;
+		text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+	}
+	
+	.banner-section .slide-item .text{
+		font-size: 13px !important;
+		margin-top: 8px !important;
+		margin-bottom: 12px !important;
+		opacity: 1 !important;
+		visibility: visible !important;
+		transform: translateY(0) !important;
+		color: #fff;
+		text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+		line-height: 1.4em;
+	}
+	
+	.banner-section .slide-item .subtitle{
+		font-size: 10px !important;
+		margin-bottom: 8px !important;
+		opacity: 1 !important;
+		visibility: visible !important;
+		transform: translateY(0) !important;
+		color: var(--main-color);
+		text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+	}
+	
+	.banner-section .slide-item .pattern-image{
+		width: 60px !important;
+		margin: 8px auto 12px !important;
+		opacity: 1 !important;
+		visibility: visible !important;
+		transform: translateY(0) !important;
+	}
+	
+	.banner-section .slide-item .links-box{
+		padding-top: 12px !important;
+		opacity: 1 !important;
+		visibility: visible !important;
+		transform: translateY(0) !important;
+	}
+	
+	.banner-section .slide-item .links-box .link .theme-btn{
+		padding: 10px 20px;
+		font-size: 12px;
 	}
 
 	.menu-tabs .buttons .tab-buttons .tab-btn{
