@@ -1991,7 +1991,6 @@ body.visible-sidebar{
 
 .story-section .image-col{
   position: relative;
-  margin-bottom: var(--margin-bottom-40);
 }
 
 .story-section .image-col .inner{
@@ -2852,8 +2851,7 @@ body.visible-sidebar{
 
 .reserve-section .outer-box{
   position: relative;
-  top: -270px;
-  margin-bottom: -270px;
+  margin: 50px 0;
   background: var(--color-five);
   z-index: 1;
 }

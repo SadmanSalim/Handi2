@@ -3,17 +3,132 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Delici - Restaurants HTML Template - Menus List</title>
+<title>Handi - Taste Of Indian Cuisine - Menu</title>
 <!-- Stylesheets -->
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-<link rel="icon" href="images/favicon.png" type="image/x-icon">
+<link rel="icon" href="images/favicon.jpg" type="image/x-icon">
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <link href="css/responsive.css" rel="stylesheet">
 <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]--> 
+
+<style>
+/* Custom styles for menu page - navbar and top bar background colors */
+.main-header .header-top {
+    background: #2a2a2a !important; /* Grey color for top bar */
+}
+
+.main-header .header-upper {
+    background: #1a1a1a !important; /* Dark color for header */
+    padding: 0 !important; /* Reduce padding */
+}
+
+.fixed-header .header-upper {
+    background: #1a1a1a !important; /* Dark color for fixed header */
+}
+
+.main-header .main-box .logo-box {
+    padding: 8px 0 !important; /* Reduce logo box padding */
+}
+
+.main-header .main-box {
+    padding: 0 !important; /* Reduce main box padding */
+}
+
+.main-header .main-box .logo-box .logo img {
+    max-height: 140px !important; /* Logo size */
+    width: auto !important;
+    height: auto !important;
+}
+
+.fixed-header .main-box .logo-box .logo img {
+    max-height: 140px !important; /* Same size for sticky header */
+    width: auto !important;
+    height: auto !important;
+}
+
+/* Mobile Navbar - Medium Height */
+@media (max-width: 991px) {
+    .main-header .header-top {
+        padding: 10px 0 !important;
+    }
+    
+    .main-header .header-upper {
+        padding: 10px 0 !important;
+    }
+    
+    .main-header .main-box {
+        padding: 8px 0 !important;
+    }
+    
+    .main-header .main-box .logo-box {
+        padding: 8px 0 !important;
+    }
+    
+    .main-header .main-box .logo-box .logo img {
+        max-height: 100px !important;
+    }
+    
+    .fixed-header .main-box .logo-box .logo img {
+        max-height: 90px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .main-header .header-top {
+        padding: 8px 0 !important;
+    }
+    
+    .main-header .header-upper {
+        padding: 8px 0 !important;
+    }
+    
+    .main-header .main-box {
+        padding: 6px 0 !important;
+    }
+    
+    .main-header .main-box .logo-box {
+        padding: 6px 0 !important;
+    }
+    
+    .main-header .main-box .logo-box .logo img {
+        max-height: 80px !important;
+    }
+    
+    .fixed-header .main-box .logo-box .logo img {
+        max-height: 75px !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .main-header .header-top {
+        padding: 6px 0 !important;
+    }
+    
+    .main-header .header-upper {
+        padding: 6px 0 !important;
+    }
+    
+    .main-header .main-box {
+        padding: 6px 0 !important;
+    }
+    
+    .main-header .main-box .logo-box {
+        padding: 6px 0 !important;
+    }
+    
+    .main-header .main-box .logo-box .logo img {
+        max-height: 70px !important;
+    }
+    
+    .fixed-header .main-box .logo-box .logo img {
+        max-height: 65px !important;
+    }
+}
+</style>
 
 </head>
 
@@ -21,7 +136,7 @@
   <div class="page-wrapper"> 
   
     <!-- Preloader -->
-    <div class="loader-wrap">
+    <!-- <div class="loader-wrap">
         <div class="preloader">
             <div class="preloader-close">x</div>
             <div id="handle-preloader" class="handle-preloader">
@@ -50,24 +165,24 @@
                 </div>  
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Preloader End -->
 
     <!-- Main Header-->
-    <header class="main-header">
+    <header class="main-header header-down">
         <div class="header-top">
             <div class="auto-container">
                 <div class="inner clearfix">
                     <div class="top-left clearfix">
                         <ul class="top-info clearfix">
-                            <li><i class="icon far fa-map-marker-alt"></i> Restaurant St, Delicious City, London 9578, UK</li>
+                            <li><i class="icon far fa-map-marker-alt"></i>M.M Ali Road,Dampara Police line, Chittagong</li>
                             <li><i class="icon far fa-clock"></i> Daily : 8.00 am to 10.00 pm</li>
                         </ul>
                     </div>
                     <div class="top-right clearfix">
                         <ul class="top-info clearfix">
-                            <li><a href="tel:+11234567890"><i class="icon far fa-phone"></i> +1 123 456 7890</a></li>
-                            <li><a href="mailto:booking@restaurant.com"><i class="icon far fa-envelope"></i> booking@restaurant.com</a></li>
+                            <li><a href="tel:+11234567890"><i class="icon far fa-phone"></i>01819-342634</a></li>
+                            <li><a href="mailto:booking@restaurant.com"><i class="icon far fa-envelope"></i> handi@gmail.com</a></li>
                         </ul>
                     </div>
                 </div>
@@ -77,10 +192,19 @@
         <div class="header-upper">        
             <div class="auto-container">
                 <!-- Main Box -->
+
                 <div class="main-box clearfix">
                     <!--Logo-->
                     <div class="logo-box">
-                         <div class="logo"><a href="index.html" title="Delici - Restaurants HTML Template"><img src="images/logo.png" alt="" title="Delici - Restaurants HTML Template"></a></div>
+                         <div class="logo">
+                             <a href="index.html" title="Delici - Restaurants HTML Template">
+                                 <img src="images/logo.png"
+                                      data-default-src="images/logo.png"
+                                      data-sticky-src="images/logo-white.png"
+                                      alt=""
+                                      title="Delici - Restaurants HTML Template">
+                             </a>
+                         </div>
                     </div>
 
                     <div class="nav-box clearfix">
@@ -88,55 +212,13 @@
                         <div class="nav-outer clearfix">         
                             <nav class="main-menu">
                                 <ul class="navigation clearfix">
-                                    <li class=""><a href="index.html">Home</a>
+                                    <li><a href="index.html">Home</a>
                                     </li>
-                                    <li class="current dropdown has-mega-menu"><a href="https://kalanidhithemes.com/live-preview/landing-page/delici/all-demo/Delici-Defoult/menu-list.html">Menus</a>
-                                        <ul>
-                                            <li>
-                                                <div class="mega-menu">
-                                                    <div class="menu-inner">
-                                                        <div class="auto-container">
-                                                            <div class="row clearfix">
-                                                                <div class="menu-block col-lg-3 col-md-6 col-sm-6">
-                                                                    <div class="image"><a href="menu-list-1.html"><img src="images/resource/menu-image-1.jpg" alt=""></a></div>
-                                                                    <div class="title"><a href="menu-list-1.html">Menu list 1</a></div>
-                                                                </div>
-                                                                <div class="menu-block col-lg-3 col-md-6 col-sm-6">
-                                                                    <div class="image"><a href="menu-list-2.html"><img src="images/resource/menu-image-2.jpg" alt=""></a></div>
-                                                                    <div class="title"><a href="menu-list-2.html">Menu list 2</a></div>
-                                                                </div>
-                                                                <div class="menu-block col-lg-3 col-md-6 col-sm-6">
-                                                                    <div class="image"><a href="menu-list-3.html"><img src="images/resource/menu-image-3.jpg" alt=""></a></div>
-                                                                    <div class="title"><a href="menu-list-3.html">Menu list 3</a></div>
-                                                                </div>
-                                                                <div class="menu-block col-lg-3 col-md-6 col-sm-6">
-                                                                    <div class="image"><a href="menu-list-4.html"><img src="images/resource/menu-image-4.jpg" alt=""></a></div>
-                                                                    <div class="title"><a href="menu-list-4.html">Menu list 4</a></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
+                                    <li class="current"><a href="menu-list-1.html">Menus</a>
+                            
                                     </li>
                                     <li><a href="about.html">About Us</a></li>
-                                    <li><a href="our-chef.html">Our chefs</a></li>
-                                    <li class="dropdown"><a href="menu-list-1.html#">Pages</a>
-                                        <ul>
-                                            <li><a href="menu-list-1.html#">Dropdown Menu 1</a></li>
-                                            <li><a href="menu-list-1.html#">Dropdown Menu 2</a></li>
-                                            <li><a href="menu-list-1.html#">Dropdown Menu 3</a></li>
-                                            <li class="dropdown"><a href="menu-list-1.html#">Dropdown Menu 4</a>
-                                                <ul>
-                                                    <li><a href="menu-list-1.html#">Dropdown Menu level 2</a></li>
-                                                    <li><a href="menu-list-1.html#">Dropdown Menu level 2</a></li>
-                                                    <li><a href="menu-list-1.html#">Dropdown Menu Level 3</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="menu-list-1.html#">Dropdown Lorem 5</a></li>
-                                        </ul>
-                                    </li>
+                                    <li><a href="our-chef.html">Blog</a></li>
                                     <li><a href="contact-us.html">Contact</a></li>
                                 </ul>
                             </nav>
@@ -197,9 +279,9 @@
             <!-- .Side-menu -->
             <div class="side-menu">
                  <ul class="navigation clearfix">
-                    <li class=""><a href="index.html">Home</a>
+                    <li><a href="index.html">Home</a>
                     </li>
-                    <li class="current dropdown"><a href="https://kalanidhithemes.com/live-preview/landing-page/delici/all-demo/Delici-Defoult/menu-list.html">Menus</a>
+                    <li class="current dropdown"><a href="menu-list-1.html">Menus</a>
                         <ul>
                             <li><a href="menu-list-1.html">Menu List 1</a></li>
                             <li><a href="menu-list-2.html">Menu List 2</a></li>
@@ -230,14 +312,14 @@
             
             <h2>Visit Us</h2>
             <ul class="info">
-                <li>Restaurant St, Delicious City, <br>London 9578, UK</li>
-                <li>Open: 9.30 am - 2.30pm</li>
-                <li><a href="mailto:booking@domainame.com">booking@domainame.com</a></li>
+                <li>M.M Ali Road,Dampara Police line, <br>Chittagong</li>
+                <li>Open: 8.00 am - 10.00 pm</li>
+                <li><a href="mailto:handi@gmail.com">handi@gmail.com</a></li>
             </ul>
             <div class="separator"><span></span></div>
             <div class="booking-info">
                 <div class="bk-title">Booking request</div>
-                <div class="bk-no"><a href="tel:+88-123-123456">+88-123-123456</a></div>
+                <div class="bk-no"><a href="tel:+88-123-123456">01819-342634</a></div>
             </div>
         
         </div><!-- / Hidden Bar Wrapper -->
@@ -256,14 +338,14 @@
 
             <h2>Visit Us</h2>
             <ul class="info">
-                <li>Restaurant St, Delicious City, <br>London 9578, UK</li>
-                <li>Open: 9.30 am - 2.30pm</li>
-                <li><a href="mailto:booking@domainame.com">booking@domainame.com</a></li>
+                <li>M.M Ali Road,Dampara Police line, <br>Chittagong</li>
+                <li>Open: 8.00 am - 10.00 pm</li>
+                <li><a href="mailto:handi@gmail.com">handi@gmail.com</a></li>
             </ul>
             <div class="separator"><span></span></div>
             <div class="booking-info">
                 <div class="bk-title">Booking request</div>
-                <div class="bk-no"><a href="tel:+88-123-123456">+88-123-123456</a></div>
+                <div class="bk-no"><a href="tel:+88-123-123456">01819-342634</a></div>
             </div>
         </div>
     </section>
@@ -303,29 +385,29 @@
                         <!--Block-->
                         <div class="dish-block">
                             <div class="inner-box">
-                                <div class="title clearfix"><div class="ttl clearfix"><h5><a href="menu-list-1.html#">Greek Salad</a></h5></div><div class="price"><span>$25.50</span></div></div>
-                                <div class="text desc"><a href="menu-list-1.html#">Tomatoes, green bell pepper, sliced cucumber onion, olives, and feta cheese.</a></div>
+                                <div class="title clearfix"><div class="ttl clearfix"><h5><a href="menu-list-1.html#">Soup</a></h5></div><div class="price"><span>100 tk</span></div></div>
+                                <div class="text desc"><a href="menu-list-1.html#">Tomatoes, green bell pepper, sliced cucumber onion, olives...</a></div>
                             </div>
                         </div>
                         <!--Block-->
                         <div class="dish-block">
                             <div class="inner-box">
-                                <div class="title clearfix"><div class="ttl clearfix"><h5><a href="menu-list-1.html#">Lasagne <span class="s-info">SEASONAL</span></a></h5></div><div class="price"><span>$40.00</span></div></div>
-                                <div class="text desc"><a href="menu-list-1.html#">Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices</a></div>
+                                <div class="title clearfix"><div class="ttl clearfix"><h5><a href="menu-list-1.html#">King Praw</a></h5></div><div class="price"><span>250 tk</span></div></div>
+                                <div class="text desc"><a href="menu-list-1.html#">Avocados with crab meat, red onion, crab salad red bell pepper...</a></div>
                             </div>
                         </div>
                         <!--Block-->
                         <div class="dish-block">
                             <div class="inner-box">
-                                <div class="title clearfix"><div class="ttl clearfix"><h5><a href="menu-list-1.html#">Butternut Pumpkin</a></h5></div><div class="price"><span>$10.00</span></div></div>
-                                <div class="text desc"><a href="menu-list-1.html#">Typesetting industry lorem Lorem Ipsum is simply dummy text of the priand.</a></div>
+                                <div class="title clearfix"><div class="ttl clearfix"><h5><a href="menu-list-1.html#">Chicken Boti Kebab</a></h5></div><div class="price"><span>150 tk</span></div></div>
+                                <div class="text desc"><a href="menu-list-1.html#">Avocados with crab meat, red onion, crab salad stuffed bell pepper...</a></div>
                             </div>
                         </div>
                         <!--Block-->
                         <div class="dish-block">
                             <div class="inner-box">
-                                <div class="title clearfix"><div class="ttl clearfix"><h5><a href="menu-list-1.html#">Tokusen Wagyu <span class="s-info">NEW</span></a></h5></div><div class="price"><span>$39.00</span></div></div>
-                                <div class="text desc"><a href="menu-list-1.html#">Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices.</a></div>
+                                <div class="title clearfix"><div class="ttl clearfix"><h5><a href="menu-list-1.html#">Fried Chicken</a></h5></div><div class="price"><span>120 tk</span></div></div>
+                                <div class="text desc"><a href="menu-list-1.html#">Vegetables, cheeses, ground meats, tomato sauce, seasonings...</a></div>
                             </div>
                         </div>
                     </div>
@@ -356,134 +438,29 @@
                         <!--Block-->
                         <div class="dish-block">
                             <div class="inner-box">
-                                <div class="title clearfix"><div class="ttl clearfix"><h5><a href="menu-list-1.html#">Greek Salad</a></h5></div><div class="price"><span>$25.50</span></div></div>
-                                <div class="text desc"><a href="menu-list-1.html#">Tomatoes, green bell pepper, sliced cucumber onion, olives, and feta cheese.</a></div>
+                                <div class="title clearfix"><div class="ttl clearfix"><h5><a href="menu-list-1.html#">Hyderabadi Biryani</a></h5></div><div class="price"><span>450 tk</span></div></div>
+                                <div class="text desc"><a href="menu-list-1.html#">Tomatoes, green bell pepper, sliced cucumber onion, olives...</a></div>
                             </div>
                         </div>
                         <!--Block-->
                         <div class="dish-block">
                             <div class="inner-box">
-                                <div class="title clearfix"><div class="ttl clearfix"><h5><a href="menu-list-1.html#">Lasagne <span class="s-info">SEASONAL</span></a></h5></div><div class="price"><span>$40.00</span></div></div>
-                                <div class="text desc"><a href="menu-list-1.html#">Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices</a></div>
+                                <div class="title clearfix"><div class="ttl clearfix"><h5><a href="menu-list-1.html#">Fish Karahi</a></h5></div><div class="price"><span>150 tk</span></div></div>
+                                <div class="text desc"><a href="menu-list-1.html#">Avocados with crab meat, red onion, crab salad stuffed bell pepper...</a></div>
                             </div>
                         </div>
                         <!--Block-->
                         <div class="dish-block">
                             <div class="inner-box">
-                                <div class="title clearfix"><div class="ttl clearfix"><h5><a href="menu-list-1.html#">Butternut Pumpkin</a></h5></div><div class="price"><span>$10.00</span></div></div>
-                                <div class="text desc"><a href="menu-list-1.html#">Typesetting industry lorem Lorem Ipsum is simply dummy text of the priand.</a></div>
+                                <div class="title clearfix"><div class="ttl clearfix"><h5><a href="menu-list-1.html#">Chicken Grill</a></h5></div><div class="price"><span>150 tk</span></div></div>
+                                <div class="text desc"><a href="menu-list-1.html#">Avocados with crab meat, red onion, crab salad red bell pepper...</a></div>
                             </div>
                         </div>
                         <!--Block-->
                         <div class="dish-block">
                             <div class="inner-box">
-                                <div class="title clearfix"><div class="ttl clearfix"><h5><a href="menu-list-1.html#">Tokusen Wagyu <span class="s-info">NEW</span></a></h5></div><div class="price"><span>$39.00</span></div></div>
-                                <div class="text desc"><a href="menu-list-1.html#">Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices.</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--Menu Section-->
-    <section class="menu-one">
-        <div class="left-bg"><img src="images/background/bg-22.png" alt="" title=""></div>
-        <div class="auto-container">
-            <div class="title-box centered">
-                <div class="subtitle"><span>sweet & sweet</span></div>
-                <div class="pattern-image"><img src="images/icons/separator.svg" alt="" title=""></div>
-                <h2>Desserts</h2>
-            </div>
-
-            <div class="row clearfix">
-                <div class="image-col col-lg-7 col-md-12 col-sm-12">
-                    <div class="inner">
-                        <div class="image"><img src="images/resource/menus-desert.jpg" alt=""></div>
-                    </div>
-                </div>
-                <div class="menu-col col-lg-5 col-md-12 col-sm-12">
-                    <div class="inner">
-                        <!--Block-->
-                        <div class="dish-block">
-                            <div class="inner-box">
-                                <div class="title clearfix"><div class="ttl clearfix"><h5><a href="menu-list-1.html#">Greek Salad</a></h5></div><div class="price"><span>$25.50</span></div></div>
-                                <div class="text desc"><a href="menu-list-1.html#">Tomatoes, green bell pepper, sliced cucumber onion, olives, and feta cheese.</a></div>
-                            </div>
-                        </div>
-                        <!--Block-->
-                        <div class="dish-block">
-                            <div class="inner-box">
-                                <div class="title clearfix"><div class="ttl clearfix"><h5><a href="menu-list-1.html#">Lasagne <span class="s-info">SEASONAL</span></a></h5></div><div class="price"><span>$40.00</span></div></div>
-                                <div class="text desc"><a href="menu-list-1.html#">Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices</a></div>
-                            </div>
-                        </div>
-                        <!--Block-->
-                        <div class="dish-block">
-                            <div class="inner-box">
-                                <div class="title clearfix"><div class="ttl clearfix"><h5><a href="menu-list-1.html#">Butternut Pumpkin</a></h5></div><div class="price"><span>$10.00</span></div></div>
-                                <div class="text desc"><a href="menu-list-1.html#">Typesetting industry lorem Lorem Ipsum is simply dummy text of the priand.</a></div>
-                            </div>
-                        </div>
-                        <!--Block-->
-                        <div class="dish-block">
-                            <div class="inner-box">
-                                <div class="title clearfix"><div class="ttl clearfix"><h5><a href="menu-list-1.html#">Tokusen Wagyu <span class="s-info">NEW</span></a></h5></div><div class="price"><span>$39.00</span></div></div>
-                                <div class="text desc"><a href="menu-list-1.html#">Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices.</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--Menu Section-->
-    <section class="menu-one alternate">
-        
-        <div class="right-bg-2"><img src="images/background/bg-23.png" alt="" title=""></div>
-        <div class="auto-container">
-            <div class="title-box centered">
-                <div class="subtitle"><span>hot & cold</span></div>
-                <div class="pattern-image"><img src="images/icons/separator.svg" alt="" title=""></div>
-                <h2>Drinks Menu</h2>
-            </div>
-
-            <div class="row clearfix">
-                <div class="image-col col-lg-7 col-md-12 col-sm-12">
-                    <div class="inner">
-                        <div class="image"><img src="images/resource/menus-drinks.jpg" alt=""></div>
-                    </div>
-                </div>
-                <div class="menu-col col-lg-5 col-md-12 col-sm-12">
-                    <div class="inner">
-                        <!--Block-->
-                        <div class="dish-block">
-                            <div class="inner-box">
-                                <div class="title clearfix"><div class="ttl clearfix"><h5><a href="menu-list-1.html#">Greek Salad</a></h5></div><div class="price"><span>$25.50</span></div></div>
-                                <div class="text desc"><a href="menu-list-1.html#">Tomatoes, green bell pepper, sliced cucumber onion, olives, and feta cheese.</a></div>
-                            </div>
-                        </div>
-                        <!--Block-->
-                        <div class="dish-block">
-                            <div class="inner-box">
-                                <div class="title clearfix"><div class="ttl clearfix"><h5><a href="menu-list-1.html#">Lasagne <span class="s-info">SEASONAL</span></a></h5></div><div class="price"><span>$40.00</span></div></div>
-                                <div class="text desc"><a href="menu-list-1.html#">Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices</a></div>
-                            </div>
-                        </div>
-                        <!--Block-->
-                        <div class="dish-block">
-                            <div class="inner-box">
-                                <div class="title clearfix"><div class="ttl clearfix"><h5><a href="menu-list-1.html#">Butternut Pumpkin</a></h5></div><div class="price"><span>$10.00</span></div></div>
-                                <div class="text desc"><a href="menu-list-1.html#">Typesetting industry lorem Lorem Ipsum is simply dummy text of the priand.</a></div>
-                            </div>
-                        </div>
-                        <!--Block-->
-                        <div class="dish-block">
-                            <div class="inner-box">
-                                <div class="title clearfix"><div class="ttl clearfix"><h5><a href="menu-list-1.html#">Tokusen Wagyu <span class="s-info">NEW</span></a></h5></div><div class="price"><span>$39.00</span></div></div>
-                                <div class="text desc"><a href="menu-list-1.html#">Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices.</a></div>
+                                <div class="title clearfix"><div class="ttl clearfix"><h5><a href="menu-list-1.html#">Oven Baked Pasta</a></h5></div><div class="price"><span>120 tk</span></div></div>
+                                <div class="text desc"><a href="menu-list-1.html#">Vegetables, cheeses, ground meats, tomato sauce, seasonings...</a></div>
                             </div>
                         </div>
                     </div>
@@ -503,7 +480,7 @@
                         <div class="inner">
                             <div class="title">
                                 <h2>Online Reservation</h2>
-                                <div class="request-info">Booking request <a href="menu-list-1.html#">+88-123-123456</a> or fill out the order form</div>
+                                <div class="request-info">Booking request <a href="menu-list-1.html#">01819-342634</a> or fill out the order form</div>
                             </div>
                             <div class="default-form reservation-form">
                                 <form method="post" action="index.html">
@@ -631,10 +608,10 @@
                                 <div class="logo"><a href="index.html" title="Delici - Restaurants HTML Template"><img src="images/logo.png" alt="" title="Delici - Restaurants HTML Template"></a></div>
                                 <div class="info">
                                     <ul>
-                                        <li>Restaurant St, Delicious City, London 9578, UK</li>
-                                        <li><a href="mailto:booking@domainname.com">booking@domainname.com</a></li>
-                                        <li><a href="tel:+88-123-123456">Booking Request : +88-123-123456</a></li>
-                                        <li>Open : 09:00 am - 01:00 pm</li>
+                                        <li>M.M Ali Road,Dampara Police line, Chittagong</li>
+                                        <li><a href="mailto:handi@gmail.com">handi@gmail.com</a></li>
+                                        <li><a href="tel:+88-123-123456">Booking Request : 01819-342634</a></li>
+                                        <li>Open : 8.00 am - 10.00 pm</li>
                                     </ul>
                                 </div>
                                 <div class="separator"><span></span><span></span><span></span></div>
@@ -688,7 +665,7 @@
         </div>
         <div class="footer-bottom">
             <div class="auto-container">
-                <div class="copyright">&copy; 2022 Restaurt. All Rights Reserved   |    Crafted by <a href="https://themeforest.net/user/kalanidhithemes" target="blank">Kalanidhi Themes</a></div>
+                <div class="copyright">&copy; 2025 Handi. All Rights Reserved   |    Crafted by <a href="https://brandboosteres.com/" target="blank">Brand Boosters</a></div>
             </div>
         </div>
     </footer>

@@ -15,6 +15,488 @@
 <link href="css/responsive.css" rel="stylesheet">
 <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]--> 
 
+<style>
+/* Custom styles for index page - navbar and top bar background colors */
+.main-header .header-top {
+    background: #2a2a2a !important; /* Grey color for top bar */
+}
+
+.main-header .header-upper {
+    background: #1a1a1a !important; /* Dark color for header */
+    padding: 0 !important; /* Reduce padding */
+}
+
+.fixed-header .header-upper {
+    background: #1a1a1a !important; /* Dark color for fixed header */
+}
+
+.main-header .main-box .logo-box {
+    padding: 8px 0 !important; /* Reduce logo box padding */
+}
+
+.main-header .main-box {
+    padding: 0 !important; /* Reduce main box padding */
+}
+
+.main-header .main-box .logo-box .logo img {
+    max-height: 140px !important; /* Logo size */
+    width: auto !important;
+    height: auto !important;
+}
+
+.fixed-header .main-box .logo-box .logo img {
+    max-height: 140px !important; /* Same size for sticky header */
+    width: auto !important;
+    height: auto !important;
+}
+
+/* Mobile Navbar - Medium Height */
+@media (max-width: 991px) {
+    .main-header .header-top {
+        padding: 10px 0 !important;
+    }
+    
+    .main-header .header-upper {
+        padding: 10px 0 !important;
+    }
+    
+    .main-header .main-box {
+        padding: 8px 0 !important;
+    }
+    
+    .main-header .main-box .logo-box {
+        padding: 8px 0 !important;
+    }
+    
+    .main-header .main-box .logo-box .logo img {
+        max-height: 100px !important;
+    }
+    
+    .fixed-header .main-box .logo-box .logo img {
+        max-height: 90px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .main-header .header-top {
+        padding: 8px 0 !important;
+    }
+    
+    .main-header .header-upper {
+        padding: 8px 0 !important;
+    }
+    
+    .main-header .main-box {
+        padding: 6px 0 !important;
+    }
+    
+    .main-header .main-box .logo-box {
+        padding: 6px 0 !important;
+    }
+    
+    .main-header .main-box .logo-box .logo img {
+        max-height: 80px !important;
+    }
+    
+    .fixed-header .main-box .logo-box .logo img {
+        max-height: 75px !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .main-header .header-top {
+        padding: 6px 0 !important;
+    }
+    
+    .main-header .header-upper {
+        padding: 6px 0 !important;
+    }
+    
+    .main-header .main-box {
+        padding: 5px 0 !important;
+    }
+    
+    .main-header .main-box .logo-box {
+        padding: 5px 0 !important;
+    }
+    
+    .main-header .main-box .logo-box .logo img {
+        max-height: 70px !important;
+    }
+    
+    .fixed-header .main-box .logo-box .logo img {
+        max-height: 65px !important;
+    }
+}
+
+/* Indian-Thai Cuisine Banner - Warm Spice-Inspired Design */
+.hero-banner-section {
+    position: relative;
+    padding: 220px 0 160px;
+    margin-top: 0;
+    background: linear-gradient(135deg, #1a0f0a 0%, #2d1810 25%, #3d2215 50%, #2d1810 75%, #1a0f0a 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+}
+
+.hero-banner-section .auto-container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Content Section */
+.hero-content-col {
+    padding: 60px 50px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-badge {
+    display: inline-block;
+    font-size: 12px;
+    color: #ff8c00;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 600;
+    padding: 8px 22px;
+    background: rgba(255,140,0,0.15);
+    border: 1px solid rgba(255,140,0,0.3);
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+
+.hero-separator {
+    margin: 20px 0 25px;
+    opacity: 0.8;
+}
+
+.hero-title {
+    font-size: 70px;
+    line-height: 1.15;
+    margin: 0 0 30px;
+    font-weight: 700;
+    font-family: var(--font-family-Forum);
+    letter-spacing: -2px;
+}
+
+.hero-title-main {
+    display: block;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.hero-title-accent {
+    display: block;
+    color: #ff8c00;
+}
+
+.hero-description {
+    font-size: 18px;
+    line-height: 1.85;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 45px;
+    font-weight: 400;
+    max-width: 550px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 16px 40px;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: 2px solid transparent;
+}
+
+.hero-btn-primary {
+    background: #ff8c00;
+    color: #ffffff;
+    border-color: #ff8c00;
+}
+
+.hero-btn-primary:hover {
+    background: #ff6b00;
+    color: #ffffff;
+    border-color: #ff6b00;
+    transform: translateY(-2px);
+}
+
+.hero-btn-secondary {
+    background: transparent;
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.hero-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Video Section */
+.hero-video-col {
+    padding: 50px 30px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.hero-video-wrapper:hover {
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3px);
+}
+
+.hero-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    min-height: 580px;
+    border-radius: 12px;
+    transition: transform 0.3s ease, opacity 0.5s ease;
+}
+
+.hero-video-wrapper:hover .hero-video {
+    transform: scale(1.02);
+}
+
+/* Responsive Styles */
+@media (max-width: 1199px) {
+    .hero-title {
+        font-size: 65px;
+    }
+}
+
+@media (max-width: 991px) {
+    .hero-banner-section {
+        padding: 180px 0 120px;
+        min-height: auto;
+    }
+    
+    .hero-content-col {
+        padding: 50px 30px;
+        text-align: center;
+    }
+    
+    .hero-content {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .hero-title {
+        font-size: 52px;
+    }
+    
+    .hero-description {
+        max-width: 100%;
+        margin: 0 0 40px;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .hero-video-col {
+        margin-top: 50px;
+        padding: 30px 20px;
+    }
+    
+    .hero-video-wrapper {
+        max-width: 340px;
+    }
+    
+    .hero-video {
+        min-height: 500px;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-banner-section {
+        padding: 150px 0 80px;
+    }
+    
+    /* Hide text content on mobile */
+    .hero-content-col {
+        display: none !important;
+    }
+    
+    /* Make video full width and centered on mobile */
+    .hero-video-col {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 20px 15px !important;
+        margin: 0 auto;
+    }
+    
+    .hero-video-wrapper {
+        max-width: 100%;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .hero-video {
+        min-height: 500px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 575px) {
+    .hero-banner-section {
+        padding: 140px 0 60px;
+    }
+    
+    .hero-video-wrapper {
+        max-width: 100%;
+        width: 100%;
+    }
+    
+    .hero-video {
+        min-height: 450px;
+    }
+}
+
+/* Story Section - Keep Desktop Margin on Mobile */
+@media (max-width: 767px) {
+    .story-section .image-col .images {
+        padding-left: 0 !important;
+    }
+}
+
+/* Special Offer Section - Grid on Desktop, Slider on Mobile */
+.special-offer .dish-gallery-slider {
+    margin: 0 -15px;
+}
+
+.special-offer .offer-block-two {
+    padding: 0 15px;
+    margin-bottom: 30px;
+}
+
+.special-offer .offer-block-two.margin-top {
+    margin-top: 0 !important;
+}
+
+/* Desktop: Grid Layout (disable carousel) */
+@media (min-width: 992px) {
+    .special-offer .dish-gallery-slider.owl-carousel {
+        display: block !important;
+    }
+    
+    .special-offer .dish-gallery-slider.owl-carousel .owl-stage-outer {
+        overflow: visible !important;
+        width: 100% !important;
+    }
+    
+    .special-offer .dish-gallery-slider.owl-carousel .owl-stage {
+        transform: none !important;
+        width: 100% !important;
+        display: block !important;
+    }
+    
+    .special-offer .dish-gallery-slider.owl-carousel .owl-item {
+        transform: none !important;
+        width: auto !important;
+        float: left !important;
+        display: block !important;
+    }
+    
+    .special-offer .offer-block-two {
+        margin-bottom: 40px;
+        width: 25% !important;
+        float: left !important;
+    }
+    
+    .special-offer .dish-gallery-slider.owl-carousel .owl-nav,
+    .special-offer .dish-gallery-slider.owl-carousel .owl-dots {
+        display: none !important;
+    }
+}
+
+/* Mobile: Slider Layout */
+@media (max-width: 991px) {
+    .special-offer .dish-gallery-slider.owl-carousel .owl-item {
+        width: 100%;
+    }
+    
+    .special-offer .offer-block-two {
+        width: 100% !important;
+        float: none !important;
+    }
+}
+
+/* Footer Links - Left Aligned on Mobile Only */
+@media (max-width: 991px) {
+    .main-footer .links-col {
+        text-align: left !important;
+        width: 50% !important;
+        float: left !important;
+    }
+
+    .main-footer .links-col .inner {
+        text-align: left !important;
+    }
+
+    .main-footer .links-col .links {
+        text-align: left !important;
+    }
+
+    .main-footer .links-col .links li {
+        text-align: left !important;
+    }
+    
+    /* Combine links side by side on mobile */
+    .main-footer .links-col.last {
+        margin-top: 0 !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .main-footer .links-col {
+        width: 50% !important;
+        float: left !important;
+    }
+}
+</style>
+
 </head>
 
 <body>
@@ -99,7 +581,7 @@
                                 <ul class="navigation clearfix">
                                     <li class="current"><a href="index.html">Home</a>
                                     </li>
-                                    <li><a href="https://kalanidhithemes.com/live-preview/landing-page/delici/all-demo/Delici-Defoult/menu-list.html">Menus</a>
+                                    <li><a href="menu-list-1.html">Menus</a>
                             
                                     </li>
                                     <li><a href="about.html">About Us</a></li>
@@ -236,105 +718,40 @@
     <!--End Hidden Bar -->
 
     <!-- Banner Section -->
-    <section class="banner-section">
-        
-        <div class="banner-container">
-            <div class="banner-slider">
-                <div class="swiper-wrapper">
-                    <!--Slide Item-->
-                    <div class="swiper-slide slide-item">
-                        <div class="image-layer" style="background-image: url(images/main-slider/slider-1.jpg);"></div>
+    <section class="hero-banner-section">
+        <div class="hero-bg-overlay"></div>
                         <div class="auto-container">
-                          <div class="content-box">
-                                <div class="content">
-                                    <div class="clearfix">
-                                        <div class="inner">
-                                            <div class="subtitle"><span>delightful experience</span></div>
-                                            <div class="pattern-image"><img src="images/icons/separator.svg" alt="" title=""></div>
-                                            <h1><span>Flavors Inspired by <br>the Seasons</span></h1>
-                                            <div class="text">Handi Restaurant has a variety of mixed dishes prepared in a healthy environment to ensure a delicious</div>
-                                            <div class="links-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                                                <div class="link">
-                                                    <a href="menu-list-1.html" class="theme-btn btn-style-two clearfix">
-                                                        <span class="btn-wrap">
-                                                            <span class="text-one">view our menu</span>
-                                                            <span class="text-two">view our menu</span>
-                                                        </span>
+            <div class="row align-items-center">
+                <!-- Left Side - Content -->
+                <div class="hero-content-col col-lg-6 col-md-12">
+                    <div class="hero-content">
+                        <div class="hero-badge">Indian & Thai Fusion</div>
+                        <h1 class="hero-title">
+                            <span class="hero-title-main">Aromatic Spices</span>
+                            <span class="hero-title-accent">Meet Exotic Flavors</span>
+                        </h1>
+                        <p class="hero-description">Experience the perfect fusion of Indian and Thai cuisine at Handi Restaurant. Where traditional spices blend with exotic flavors, creating an unforgettable culinary journey that celebrates the best of both worlds.</p>
+                        <div class="hero-buttons">
+                            <a href="menu-list-1.html" class="hero-btn hero-btn-primary">
+                                <span>View Menu</span>
+                            </a>
+                            <a href="reservation-opentable.html" class="hero-btn hero-btn-secondary">
+                                <span>Book Table</span>
                                                     </a>
                                                 </div>
                                             </div>
                                         </div>
-                                        
+                <!-- Right Side - Video -->
+                <div class="hero-video-col col-lg-6 col-md-12">
+                    <div class="hero-video-wrapper">
+                        <video id="bannerVideo" autoplay muted loop playsinline webkit-playsinline preload="auto" class="hero-video" style="opacity: 0;">
+                            <source src="images/nav-video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!--Slide Item-->
-                    <div class="swiper-slide slide-item">
-                        <div class="image-layer" style="background-image: url(images/main-slider/slider-2.jpg);"></div>
-                        <div class="auto-container">
-                          <div class="content-box">
-                                <div class="content">
-                                    <div class="clearfix">
-                                        <div class="inner">
-                                            <div class="subtitle"><span>amazing & delicious</span></div>
-                                            <div class="pattern-image"><img src="images/icons/separator.svg" alt="" title=""></div>
-                                            <h1><span>Where every flavor <br>tells a story</span></h1>
-                                            <div class="text">Come with family & feel the joy of mouthwatering food</div>
-                                            <div class="links-box clearfix">
-                                                <div class="link">
-                                                    <a href="menu-list-2.html" class="theme-btn btn-style-two clearfix">
-                                                        <span class="btn-wrap">
-                                                            <span class="text-one">view our menu</span>
-                                                            <span class="text-two">view our menu</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Slide Item-->
-                    <div class="swiper-slide slide-item">
-                        <div class="image-layer" style="background-image: url(images/main-slider/slider-3.jpg);"></div>
-                        <div class="auto-container">
-                          <div class="content-box">
-                                <div class="content">
-                                    <div class="clearfix">
-                                        <div class="inner">
-                                            <div class="subtitle"><span>Tradational & Hygine</span></div>
-                                            <div class="pattern-image"><img src="images/icons/separator.svg" alt="" title=""></div>
-                                            <h1><span>For the love of <br>delicious food</span></h1>
-                                            <div class="text">Come with family & feel the joy of mouthwatering food</div>
-                                            <div class="links-box clearfix">
-                                                <div class="link">
-                                                    <a href="menu-list-3.html" class="theme-btn btn-style-two clearfix">
-                                                        <span class="btn-wrap">
-                                                            <span class="text-one">view our menu</span>
-                                                            <span class="text-two">view our menu</span>
-                                                        </span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-button-prev"><span class="fal fa-angle-left"></span></div>
-                <div class="swiper-button-next"><span class="fal fa-angle-right"></span></div>
-            </div>
-        </div>
-
-        <div class="book-btn"><a href="reservation-opentable.html" class="theme-btn"><span class="icon"><img src="images/resource/book-icon-1.png" alt="" title=""></span><span class="txt">book a table</span></a></div>
     </section>
     <!--End Banner Section -->
 
@@ -384,7 +801,7 @@
     <!--Story Section-->
     <section class="story-section">
         <div class="left-bg"><img src="images/background/bg-3.png" alt="" title=""></div>
-        <div class="auto-container">
+        <div class="container-fluid">
             <div class="row clearfix">
                 <!--Col-->
                 <div class="text-col col-xl-5 col-lg-5 col-md-12 col-sm-12">
@@ -414,10 +831,9 @@
                 <!--Col-->
                 <div class="image-col col-xl-7 col-lg-7 col-md-12 col-sm-12">
                     <div class="inner wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="0ms">
-                        <div class="round-stamp"><img src="images/resource/badge-1.png" alt=""></div>
                         <div class="images parallax-scene-1">
                             <div class="image" data-depth="0.15"><img src="images/resource/image-1.jpg" alt=""></div>
-                            <div class="image" data-depth="0.30"><img src="images/resource/image-2.jpg" alt=""></div>
+                            <!-- <div class="image" data-depth="0.30"><img src="images/resource/image-2.jpg" alt=""></div> -->
                         </div>
                     </div>
                 </div>
@@ -435,84 +851,84 @@
                     <div class="pattern-image"><img src="images/icons/separator.svg" alt="" title=""></div>
                     <h2>Best Specialties</h2>
                 </div>
-                <div class="dish-gallery-slider owl-theme owl-carousel">
-                    <!--Slide Item-->
-                    <div class="offer-block-two">
+                <div class="row clearfix dish-gallery-slider owl-theme owl-carousel">
+                    <!--Menu Item-->
+                    <div class="offer-block-two col-lg-3 col-md-6 col-sm-6">
                         <div class="inner-box">
                             <div class="image"><a href="index.html#"><img src="images/resource/menu-image-11.jpg" alt=""></a></div>
-                            <h4><a href="menu-list-1.html">Kashmiri Lamb Curry</a></h4>
+                            <h4><a href="menu-list-1.html">King Praw</a></h4>
                             <div class="text desc">Avocados with crab meat, red onion, crab salad red bell pepper...</div>
-                            <div class="price">$39.00</div>
+                            <div class="price">250 tk</div>
                         </div>
                     </div>
 
-                    <!--Slide Item-->
-                    <div class="offer-block-two margin-top">
+                    <!--Menu Item-->
+                    <div class="offer-block-two col-lg-3 col-md-6 col-sm-6">
                         <div class="inner-box">
                             <div class="image"><a href="index.html#"><img src="images/resource/menu-image-12.jpg" alt=""></a></div>
-                            <h4><a href="menu-list-2.html">Bread Upma</a></h4>
+                            <h4><a href="menu-list-2.html">Hyderabadi Biryani</a></h4>
                             <div class="text desc">Tomatoes, green bell pepper, sliced cucumber onion, olives...</div>
-                            <div class="price">$45.00</div>
+                            <div class="price">450 tk</div>
                         </div>
                     </div>
 
-                    <!--Slide Item-->
-                    <div class="offer-block-two">
+                    <!--Menu Item-->
+                    <div class="offer-block-two col-lg-3 col-md-6 col-sm-6">
                         <div class="inner-box">
                             <div class="image"><a href="index.html#"><img src="images/resource/menu-image-13.jpg" alt=""></a></div>
-                            <h4><a href="menu-list-3.html">Rogan Josh</a></h4>
+                            <h4><a href="menu-list-3.html">Fish Karahi</a></h4>
                             <div class="text desc">Avocados with crab meat, red onion, crab salad stuffed bell pepper...</div>
-                            <div class="price">$15.00</div>
+                            <div class="price">150 tk</div>
                         </div>
                     </div>
 
-                    <!--Slide Item-->
-                    <div class="offer-block-two margin-top">
+                    <!--Menu Item-->
+                    <div class="offer-block-two col-lg-3 col-md-6 col-sm-6">
                         <div class="inner-box">
                             <div class="image"><a href="index.html#"><img src="images/resource/menu-image-14.jpg" alt=""></a></div>
-                            <h4><a href="menu-list-4.html">Mutton Karahi</a></h4>
+                            <h4><a href="menu-list-4.html">Fried Chicken</a></h4>
                             <div class="text desc">Vegetables, cheeses, ground meats, tomato sauce, seasonings...</div>
-                            <div class="price">$12.00</div>
+                            <div class="price">120 tk</div>
                         </div>
                     </div>
 
-                    <!--Slide Item-->
-                    <div class="offer-block-two">
+                    <!--Menu Item-->
+                    <div class="offer-block-two col-lg-3 col-md-6 col-sm-6">
                         <div class="inner-box">
-                            <div class="image"><a href="index.html#"><img src="images/resource/menu-image-11.jpg" alt=""></a></div>
-                            <h4><a href="menu-list-1.html">Greek Salad</a></h4>
+                            <div class="image"><a href="index.html#"><img src="images/resource/menu-image-15.jpg" alt=""></a></div>
+                            <h4><a href="menu-list-1.html">Chicken Grill</a></h4>
                             <div class="text desc">Avocados with crab meat, red onion, crab salad red bell pepper...</div>
-                            <div class="price">$39.00</div>
+                            <div class="price">150 tk</div>
                         </div>
                     </div>
 
-                    <!--Slide Item-->
-                    <div class="offer-block-two margin-top">
+                    <!--Menu Item-->
+                    <div class="offer-block-two col-lg-3 col-md-6 col-sm-6">
                         <div class="inner-box">
-                            <div class="image"><a href="index.html#"><img src="images/resource/menu-image-12.jpg" alt=""></a></div>
-                            <h4><a href="menu-list-2.html">Tokusen Wagyu</a></h4>
+                            <div class="image"><a href="index.html#"><img src="images/resource/menu-image-16.jpg" alt=""></a></div>
+                            <h4><a href="menu-list-2.html">Soup</a></h4>
                             <div class="text desc">Tomatoes, green bell pepper, sliced cucumber onion, olives...</div>
-                            <div class="price">$45.00</div>
+                            <div class="price">100 tk</div>
                         </div>
                     </div>
 
-                    <!--Slide Item-->
-                    <div class="offer-block-two">
+                    <!--Menu Item-->
+                    <div class="offer-block-two col-lg-3 col-md-6 col-sm-6">
                         <div class="inner-box">
-                            <div class="image"><a href="index.html#"><img src="images/resource/menu-image-13.jpg" alt=""></a></div>
-                            <h4><a href="menu-list-3.html">Butternut Pumpkin</a></h4>
+                            <div class="image"><a href="index.html#"><img src="images/resource/menu-image-17.jpg" alt=""></a></div>
+                            <h4><a href="menu-list-3.html">Chicken Boti Kebab</a></h4>
                             <div class="text desc">Avocados with crab meat, red onion, crab salad stuffed bell pepper...</div>
-                            <div class="price">$15.00</div>
+                            <div class="price">150 tk</div>
                         </div>
                     </div>
 
-                    <!--Slide Item-->
-                    <div class="offer-block-two margin-top">
+                    <!--Menu Item-->
+                    <div class="offer-block-two col-lg-3 col-md-6 col-sm-6">
                         <div class="inner-box">
-                            <div class="image"><a href="index.html#"><img src="images/resource/menu-image-14.jpg" alt=""></a></div>
-                            <h4><a href="menu-list-4.html">Opu Fish</a></h4>
+                            <div class="image"><a href="index.html#"><img src="images/resource/menu-image-18.jpg" alt=""></a></div>
+                            <h4><a href="menu-list-4.html">Oven Baked Pasta</a></h4>
                             <div class="text desc">Vegetables, cheeses, ground meats, tomato sauce, seasonings...</div>
-                            <div class="price">$12.00</div>
+                            <div class="price">120 tk</div>
                         </div>
                     </div>
 
@@ -616,7 +1032,7 @@
                         <div class="inner">
                             <div class="title">
                                 <h2>Online Reservation</h2>
-                                <div class="request-info">Booking request <a href="index.html#">+88-123-123456</a> or fill out the order form</div>
+                                <div class="request-info">Booking request <a href="index.html#">01819-342634</a> or fill out the order form</div>
                             </div>
                             <div class="default-form reservation-form">
                                 <form method="post" action="index.html">
@@ -706,11 +1122,11 @@
                             <div class="data">
                                 <div class="booking-info">
                                     <div class="bk-title">Booking request</div>
-                                    <div class="bk-no"><a href="tel:+88-123-123456">+88-123-123456</a></div>
+                                    <div class="bk-no"><a href="tel:+88-123-123456">01819-342634</a></div>
                                 </div>
                                 <div class="separator"><span></span></div>
                                 <ul class="info">
-                                    <li><strong>Location</strong><br>Restaurant St, Delicious City, London 9578, UK</li>
+                                    <li><strong>Location</strong><br>M.M Ali Road,Dampara Police line, Chittagong</li>
                                     <li><strong>Lunch Time</strong><br>Monday to Sunday <br>11.00 am - 2.30pm</li>
                                     <li><strong>Dinner Time</strong><br>Monday to Sunday <br>05.00 pm - 10.00pm</li>
                                 </ul>
@@ -726,7 +1142,7 @@
 
     <!--Intro Section-->
     <section class="intro-section">
-        <div class="image-layer" style="background-image: url(images/background/image-3.webp);"></div>
+        <div class="image-layer" style="background-image: url(images/background/image-3.jpg);"></div>
         <div class="auto-container">
             <div class="content-box">
                 <div class="title-box centered">
@@ -740,7 +1156,7 @@
                 <!-- <div class="auth-title">Willium Joe - Master chef</div> -->
             </div>
 
-            <div class="fact-counter">
+            <div class="fact-counter d-none">
                 <div class="row clearfix">
                     <div class="fact-block col-lg-3 col-md-6 col-sm-12">
                         <div class="inner clearfix">
@@ -882,10 +1298,10 @@
                     <div class="footer-col links-col col-lg-3 col-md-6 col-sm-12">
                         <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                             <ul class="links">
-                                <li><a href="https://kalanidhithemes.com/live-preview/landing-page/delici/all-demo/Delici-Defoult/home.html">Home</a></li>
+                                <li><a href="index.html">Home</a></li>
                                 <li><a href="menu-list-1.html">Menus</a></li>
                                 <li><a href="about.html">About us</a></li>
-                                <li><a href="our-chef.html">Our chefs</a></li>
+                                <li><a href="our-chef.html">Blog</a></li>
                                 <li><a href="contact-us.html">Contact</a></li>
                             </ul>
                         </div>
@@ -929,5 +1345,192 @@
 <script src="js/wow.js"></script>
 <script src="js/parallax.min.js"></script>
 <script src="js/custom-script.js"></script>
+<script>
+// Enhanced Video Playback - Multiple Attempts
+(function() {
+    let attempts = 0;
+    const maxAttempts = 10;
+    
+    function initVideo() {
+        const video = document.getElementById('bannerVideo');
+        if (!video) {
+            attempts++;
+            if (attempts < maxAttempts) {
+                setTimeout(initVideo, 200);
+            }
+            return;
+        }
+        
+        // Ensure video properties are set
+        video.muted = true;
+        video.loop = true;
+        video.playsInline = true;
+        video.setAttribute('muted', '');
+        video.setAttribute('loop', '');
+        video.setAttribute('playsinline', '');
+        video.setAttribute('webkit-playsinline', '');
+        video.setAttribute('autoplay', '');
+        video.setAttribute('preload', 'auto');
+        
+        // Function to play video
+        function playVideo() {
+            if (video.paused || video.ended) {
+                const playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(function() {
+                        console.log('Video is playing');
+                        video.style.opacity = '1';
+                    }).catch(function(error) {
+                        console.log('Play attempt failed:', error);
+                        // Retry after a short delay
+                        setTimeout(playVideo, 500);
+                    });
+                }
+            }
+        }
+        
+        // Try to play when video can play
+        video.addEventListener('loadeddata', function() {
+            playVideo();
+        }, { once: true });
+        
+        video.addEventListener('canplay', function() {
+            playVideo();
+        }, { once: true });
+        
+        video.addEventListener('canplaythrough', function() {
+            playVideo();
+        }, { once: true });
+        
+        video.addEventListener('loadedmetadata', function() {
+            playVideo();
+        }, { once: true });
+        
+        // Ensure video loops
+        video.addEventListener('ended', function() {
+            video.currentTime = 0;
+            playVideo();
+        });
+        
+        // Handle video errors
+        video.addEventListener('error', function(e) {
+            console.log('Video error:', video.error);
+        });
+        
+        // Initial play attempt
+        if (video.readyState >= 2) {
+            playVideo();
+        } else {
+            video.load();
+        }
+        
+        // Try playing on user interaction (fallback)
+        const playOnInteraction = function() {
+            playVideo();
+        };
+        document.addEventListener('click', playOnInteraction, { once: true });
+        document.addEventListener('touchstart', playOnInteraction, { once: true });
+        document.addEventListener('scroll', playOnInteraction, { once: true });
+        
+        // Final attempt after page load
+        if (document.readyState === 'complete') {
+            setTimeout(playVideo, 1000);
+        } else {
+            window.addEventListener('load', function() {
+                setTimeout(playVideo, 1000);
+            });
+        }
+    }
+    
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initVideo);
+    } else {
+        initVideo();
+    }
+    
+    // Also try after all scripts load
+    window.addEventListener('load', function() {
+        setTimeout(initVideo, 500);
+    });
+})();
+
+// Special Offer Menu Slider - Mobile Only
+(function() {
+    function handleMenuSlider() {
+        var $slider = $('.special-offer .dish-gallery-slider');
+        if (!$slider.length || typeof jQuery === 'undefined' || !$.fn.owlCarousel) return;
+        
+        function checkAndHandle() {
+            var isMobile = window.innerWidth < 992;
+            var isInitialized = $slider.hasClass('owl-loaded');
+            
+            if (isMobile) {
+                // Mobile: Ensure carousel is initialized
+                if (!isInitialized) {
+                    // Destroy if exists and reinitialize
+                    if ($slider.data('owl.carousel')) {
+                        $slider.trigger('destroy.owl.carousel');
+                    }
+                    $slider.owlCarousel({
+                        loop: true,
+                        margin: 20,
+                        nav: true,
+                        smartSpeed: 700,
+                        autoplay: true,
+                        autoplayTimeout: 5000,
+                        navText: ['<span class="icon fa-light fa-angle-left"></span>', '<span class="icon fa-light fa-angle-right"></span>'],
+                        responsive: {
+                            0: {
+                                items: 1
+                            },
+                            600: {
+                                items: 2,
+                                margin: 15
+                            },
+                            768: {
+                                items: 2,
+                                margin: 20
+                            }
+                        }
+                    });
+                }
+            } else {
+                // Desktop: Destroy carousel and restore grid
+                if (isInitialized) {
+                    $slider.trigger('destroy.owl.carousel');
+                    $slider.removeClass('owl-carousel owl-loaded owl-drag owl-grab');
+                    $slider.find('.owl-stage-outer').children().unwrap();
+                    $slider.find('.owl-nav').remove();
+                    $slider.find('.owl-dots').remove();
+                }
+            }
+        }
+        
+        // Wait a bit for existing scripts to load, then check
+        setTimeout(function() {
+            checkAndHandle();
+            
+            // Check on resize
+            var resizeTimer;
+            $(window).on('resize', function() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(checkAndHandle, 250);
+            });
+        }, 500);
+    }
+    
+    // Initialize when jQuery is ready
+    if (typeof jQuery !== 'undefined') {
+        $(document).ready(handleMenuSlider);
+        $(window).on('load', handleMenuSlider);
+    } else {
+        window.addEventListener('load', function() {
+            setTimeout(handleMenuSlider, 1000);
+        });
+    }
+})();
+</script>
 </body>
+</html>
 </html>
