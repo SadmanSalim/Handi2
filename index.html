@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Handi - Taste Of Indian Cuisine</title>
+<title>Handi - Select Your Branch</title>
 <!-- Stylesheets -->
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
@@ -16,158 +15,28 @@
 <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]--> 
 
 <style>
-/* Custom styles for index page - navbar and top bar background colors */
-.main-header .header-top {
-    background: #2a2a2a !important; /* Grey color for top bar */
-}
-
-.main-header .header-upper {
-    background: #1a1a1a !important; /* Dark color for header */
-    padding: 0 !important; /* Reduce padding */
-}
-
-.fixed-header .header-upper {
-    background: #1a1a1a !important; /* Dark color for fixed header */
-}
-
-.main-header .main-box .logo-box {
-    padding: 8px 0 !important; /* Reduce logo box padding */
-}
-
-.main-header .main-box {
-    padding: 0 !important; /* Reduce main box padding */
-}
-
-.main-header .main-box .logo-box .logo img {
-    max-height: 140px !important; /* Logo size */
-    width: auto !important;
-    height: auto !important;
-}
-
-.fixed-header .main-box .logo-box .logo img {
-    max-height: 140px !important; /* Same size for sticky header */
-    width: auto !important;
-    height: auto !important;
-}
-
-/* Mobile Navbar - Medium Height */
-@media (max-width: 991px) {
-    .main-header .header-top {
-        padding: 10px 0 !important;
-    }
-    
-    .main-header .header-upper {
-        padding: 10px 0 !important;
-    }
-    
-    .main-header .main-box {
-        padding: 8px 0 !important;
-    }
-    
-    .main-header .main-box .logo-box {
-        padding: 8px 0 !important;
-    }
-    
-    .main-header .main-box .logo-box .logo img {
-        max-height: 100px !important;
-    }
-    
-    .fixed-header .main-box .logo-box .logo img {
-        max-height: 90px !important;
-    }
-}
-
-@media (max-width: 767px) {
-    .main-header .header-top {
-        padding: 8px 0 !important;
-    }
-    
-    .main-header .header-upper {
-        padding: 8px 0 !important;
-    }
-    
-    .main-header .main-box {
-        padding: 6px 0 !important;
-    }
-    
-    .main-header .main-box .logo-box {
-        padding: 6px 0 !important;
-    }
-    
-    .main-header .main-box .logo-box .logo img {
-        max-height: 80px !important;
-    }
-    
-    .fixed-header .main-box .logo-box .logo img {
-        max-height: 75px !important;
-    }
-}
-
-@media (max-width: 575px) {
-    .main-header .header-top {
-        padding: 6px 0 !important;
-    }
-    
-    .main-header .header-upper {
-        padding: 6px 0 !important;
-    }
-    
-    .main-header .main-box {
-        padding: 5px 0 !important;
-    }
-    
-    .main-header .main-box .logo-box {
-        padding: 5px 0 !important;
-    }
-    
-    .main-header .main-box .logo-box .logo img {
-        max-height: 70px !important;
-    }
-    
-    .fixed-header .main-box .logo-box .logo img {
-        max-height: 65px !important;
-    }
-}
-
-/* Indian-Thai Cuisine Banner - Warm Spice-Inspired Design */
-.hero-banner-section {
+/* Branch Selection Page Styles */
+.branch-selection-section {
     position: relative;
-    padding: 220px 0 160px;
-    margin-top: 0;
-    background: linear-gradient(135deg, #1a0f0a 0%, #2d1810 25%, #3d2215 50%, #2d1810 75%, #1a0f0a 100%);
     min-height: 100vh;
+    padding: 150px 0 100px;
+    background: linear-gradient(135deg, #1a0f0a 0%, #2d1810 25%, #3d2215 50%, #2d1810 75%, #1a0f0a 100%);
     display: flex;
     align-items: center;
-    overflow: hidden;
+    justify-content: center;
 }
 
-.hero-bg-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 0;
-}
-
-.hero-banner-section .auto-container {
+.branch-selection-section .auto-container {
     position: relative;
     z-index: 1;
 }
 
-/* Content Section */
-.hero-content-col {
-    padding: 60px 50px;
-    position: relative;
-    z-index: 2;
+.branch-title-box {
+    text-align: center;
+    margin-bottom: 60px;
 }
 
-.hero-content {
-    max-width: 600px;
-}
-
-.hero-badge {
+.branch-title-box .subtitle {
     display: inline-block;
     font-size: 12px;
     color: #ff8c00;
@@ -181,285 +50,133 @@
     margin-bottom: 20px;
 }
 
-.hero-separator {
-    margin: 20px 0 25px;
-    opacity: 0.8;
-}
-
-.hero-title {
-    font-size: 70px;
-    line-height: 1.15;
-    margin: 0 0 30px;
+.branch-title-box h1 {
+    font-size: 48px;
+    color: #ffffff;
+    margin: 20px 0;
     font-weight: 700;
     font-family: var(--font-family-Forum);
-    letter-spacing: -2px;
 }
 
-.hero-title-main {
-    display: block;
-    color: #ffffff;
-    margin-bottom: 10px;
-}
-
-.hero-title-accent {
-    display: block;
-    color: #ff8c00;
-}
-
-.hero-description {
+.branch-title-box .text {
     font-size: 18px;
-    line-height: 1.85;
-    color: rgba(255, 255, 255, 0.9);
-    margin: 0 0 45px;
-    font-weight: 400;
-    max-width: 550px;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.hero-buttons {
+.branch-cards {
     display: flex;
-    gap: 20px;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 50px;
 }
 
-.hero-btn {
+.branch-card {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.branch-card:hover {
+    transform: translateY(-10px);
+    border-color: #ff8c00;
+    background: rgba(255, 140, 0, 0.1);
+    box-shadow: 0 15px 40px rgba(255, 140, 0, 0.3);
+}
+
+.branch-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.branch-card:hover::before {
+    left: 100%;
+}
+
+.branch-card .icon {
+    font-size: 60px;
+    color: #ff8c00;
+    margin-bottom: 20px;
+}
+
+.branch-card h3 {
+    font-size: 28px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.branch-card .location {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.branch-card .btn-visit {
     display: inline-block;
-    padding: 16px 40px;
-    font-size: 15px;
+    padding: 12px 30px;
+    background: #ff8c00;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
-    border-radius: 5px;
     transition: all 0.3s ease;
-    text-decoration: none;
-    border: 2px solid transparent;
+    margin-top: 10px;
 }
 
-.hero-btn-primary {
-    background: #ff8c00;
-    color: #ffffff;
-    border-color: #ff8c00;
-}
-
-.hero-btn-primary:hover {
+.branch-card .btn-visit:hover {
     background: #ff6b00;
-    color: #ffffff;
-    border-color: #ff6b00;
-    transform: translateY(-2px);
-}
-
-.hero-btn-secondary {
-    background: transparent;
-    color: #ffffff;
-    border-color: rgba(255, 255, 255, 0.3);
-}
-
-.hero-btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.5);
-    transform: translateY(-2px);
-}
-
-/* Video Section */
-.hero-video-col {
-    padding: 50px 30px;
-    position: relative;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero-video-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 380px;
-    margin: 0 auto;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-}
-
-.hero-video-wrapper:hover {
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
-    transform: translateY(-3px);
-}
-
-.hero-video {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    min-height: 580px;
-    border-radius: 12px;
-    transition: transform 0.3s ease, opacity 0.5s ease;
-}
-
-.hero-video-wrapper:hover .hero-video {
-    transform: scale(1.02);
-}
-
-/* Responsive Styles */
-@media (max-width: 1199px) {
-    .hero-title {
-        font-size: 65px;
-    }
+    transform: scale(1.05);
 }
 
 @media (max-width: 991px) {
-    .hero-banner-section {
-        padding: 180px 0 120px;
-        min-height: auto;
+    .branch-selection-section {
+        padding: 120px 0 80px;
     }
     
-    .hero-content-col {
-        padding: 50px 30px;
-        text-align: center;
+    .branch-title-box h1 {
+        font-size: 36px;
     }
     
-    .hero-content {
+    .branch-cards {
+        gap: 20px;
+    }
+    
+    .branch-card {
         max-width: 100%;
-        margin: 0 auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .branch-selection-section {
+        padding: 100px 0 60px;
     }
     
-    .hero-title {
-        font-size: 52px;
+    .branch-title-box h1 {
+        font-size: 28px;
     }
     
-    .hero-description {
-        max-width: 100%;
-        margin: 0 0 40px;
-    }
-    
-    .hero-buttons {
-        justify-content: center;
-    }
-    
-    .hero-video-col {
-        margin-top: 50px;
+    .branch-card {
         padding: 30px 20px;
-    }
-    
-    .hero-video-wrapper {
-        max-width: 340px;
-    }
-    
-    .hero-video {
-        min-height: 500px;
-    }
-}
-
-@media (max-width: 767px) {
-    .hero-banner-section {
-        padding: 150px 0 80px;
-    }
-    
-    /* Hide text content on mobile */
-    .hero-content-col {
-        display: none !important;
-    }
-    
-    /* Make video full width and centered on mobile */
-    .hero-video-col {
-        width: 100% !important;
-        max-width: 100% !important;
-        padding: 20px 15px !important;
-        margin: 0 auto;
-    }
-    
-    .hero-video-wrapper {
-        max-width: 100%;
-        width: 100%;
-        margin: 0 auto;
-    }
-    
-    .hero-video {
-        min-height: 500px;
-        width: 100%;
-    }
-}
-
-@media (max-width: 575px) {
-    .hero-banner-section {
-        padding: 140px 0 60px;
-    }
-    
-    .hero-video-wrapper {
-        max-width: 100%;
-        width: 100%;
-    }
-    
-    .hero-video {
-        min-height: 450px;
-    }
-}
-
-/* Story Section - Keep Desktop Margin on Mobile */
-@media (max-width: 767px) {
-    .story-section .image-col .images {
-        padding-left: 0 !important;
-    }
-}
-
-/* Special Offer Section - Grid on Desktop, Slider on Mobile */
-.special-offer .dish-gallery-slider {
-    margin: 0 -15px;
-}
-
-.special-offer .offer-block-two {
-    padding: 0 15px;
-    margin-bottom: 30px;
-}
-
-.special-offer .offer-block-two.margin-top {
-    margin-top: 0 !important;
-}
-
-/* Desktop: Grid Layout (disable carousel) */
-@media (min-width: 992px) {
-    .special-offer .dish-gallery-slider.owl-carousel {
-        display: block !important;
-    }
-    
-    .special-offer .dish-gallery-slider.owl-carousel .owl-stage-outer {
-        overflow: visible !important;
-        width: 100% !important;
-    }
-    
-    .special-offer .dish-gallery-slider.owl-carousel .owl-stage {
-        transform: none !important;
-        width: 100% !important;
-        display: block !important;
-    }
-    
-    .special-offer .dish-gallery-slider.owl-carousel .owl-item {
-        transform: none !important;
-        width: auto !important;
-        float: left !important;
-        display: block !important;
-    }
-    
-    .special-offer .offer-block-two {
-        margin-bottom: 40px;
-        width: 25% !important;
-        float: left !important;
-    }
-    
-    .special-offer .dish-gallery-slider.owl-carousel .owl-nav,
-    .special-offer .dish-gallery-slider.owl-carousel .owl-dots {
-        display: none !important;
-    }
-}
-
-/* Mobile: Slider Layout */
-@media (max-width: 991px) {
-    .special-offer .dish-gallery-slider.owl-carousel .owl-item {
-        width: 100%;
-    }
-    
-    .special-offer .offer-block-two {
-        width: 100% !important;
-        float: none !important;
     }
 }
 </style>
@@ -468,39 +185,6 @@
 
 <body>
   <div class="page-wrapper"> 
-  
-    <!-- Preloader -->
-    <!-- <div class="loader-wrap">
-        <div class="preloader">
-            <div class="preloader-close">x</div>
-            <div id="handle-preloader" class="handle-preloader">
-                <div class="animation-preloader">
-                    <div class="spinner"></div>
-                    <div class="txt-loading">
-                        <span data-text-preloader="D" class="letters-loading">
-                            D
-                        </span>
-                        <span data-text-preloader="E" class="letters-loading">
-                            E
-                        </span>
-                        <span data-text-preloader="L" class="letters-loading">
-                            L
-                        </span>
-                        <span data-text-preloader="I" class="letters-loading">
-                            I
-                        </span>
-                        <span data-text-preloader="C" class="letters-loading">
-                            C
-                        </span>
-                        <span data-text-preloader="I" class="letters-loading">
-                            I
-                        </span>
-                    </div>
-                </div>  
-            </div>
-        </div>
-    </div> -->
-    <!-- Preloader End -->
     
     <!-- Main Header-->
     <header class="main-header header-down">
@@ -524,705 +208,62 @@
         <!-- Header Upper -->
         <div class="header-upper">        
             <div class="auto-container">
-                <!-- Main Box -->
-
                 <div class="main-box clearfix">
                     <!--Logo-->
                     <div class="logo-box">
                          <div class="logo">
-                             <a href="index.html" title="Delici - Restaurants HTML Template">
+                             <a href="index.html" title="Handi - Taste Of Indian Cuisine">
                                  <img src="images/logo.png"
                                       data-default-src="images/logo.png"
                                       data-sticky-src="images/logo-white.png"
-                                      alt=""
-                                      title="Delici - Restaurants HTML Template">
+                                      alt="Handi Restaurant"
+                                      title="Handi - Taste Of Indian Cuisine">
                              </a>
                          </div>
                     </div>
-
-                    <div class="nav-box clearfix">
-                        <!--Nav Outer-->
-                        <div class="nav-outer clearfix">         
-                            <nav class="main-menu">
-                                <ul class="navigation clearfix">
-                                    <li class="current"><a href="index.html">Home</a>
-                                    </li>
-                                    <li><a href="menu-list-1.html">Menus</a>
-                            
-                                    </li>
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="our-chef.html">Blog</a></li>
-                                    <li><a href="contact-us.html">Contact</a></li>
-                                </ul>
-                            </nav>
-                            <!-- Main Menu End-->
-                        </div>
-                        <!--Nav Outer End-->
-
-                        <div class="links-box clearfix">
-                            <div class="link link-btn">
-                                <a href="reservation-opentable.html" class="theme-btn btn-style-one clearfix">
-                                    <span class="btn-wrap">
-                                        <span class="text-one">find a table</span>
-                                        <span class="text-two">find a table</span>
-                                    </span>
-                                </a>
-                            </div>
-                            <div class="link info-toggler">
-                                <button class="info-btn">
-                                    <span class="hamburger">
-                                        <span class="top-bun"></span>
-                                        <span class="meat"></span>
-                                        <span class="bottom-bun"></span>
-                                    </span>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Hidden Nav Toggler -->
-                        <div class="nav-toggler">
-                            <button class="hidden-bar-opener">
-                                <span class="hamburger">
-                                    <span class="top-bun"></span>
-                                    <span class="meat"></span>
-                                    <span class="bottom-bun"></span>
-                                </span>
-                            </button>
-                        </div>
-
-                    </div>
-
                 </div>
             </div>
         </div>
     </header>
     <!--End Main Header -->
     
-    <!--Menu Backdrop-->
-    <div class="menu-backdrop"></div>
-
-    <!-- Hidden Navigation Bar -->
-    <section class="hidden-bar">
-        <!-- Hidden Bar Wrapper -->
-        <div class="inner-box">
-            <div class="cross-icon hidden-bar-closer"><span class="far fa-close"></span></div>
-            <div class="logo-box"><a href="index.html" title="Delici - Restaurants HTML Template"><img src="images/resource/sidebar-logo.png" alt="" title="Delici - Restaurants HTML Template"></a></div>
-            
-            <!-- .Side-menu -->
-            <div class="side-menu">
-                 <ul class="navigation clearfix">
-                    <li class="current"><a href="index.html">Home</a>
-                    </li>
-                    <li class="dropdown"><a href="https://kalanidhithemes.com/live-preview/landing-page/delici/all-demo/Delici-Defoult/menu-list.html">Menus</a>
-                        <ul>
-                            <li><a href="menu-list-1.html">Menu List 1</a></li>
-                            <li><a href="menu-list-2.html">Menu List 2</a></li>
-                            <li><a href="menu-list-3.html">Menu List 3</a></li>
-                            <li><a href="menu-list-4.html">Menu List 4</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="our-chef.html">Our chefs</a></li>
-                    <li class="dropdown"><a href="index.html#">Pages</a>
-                        <ul>
-                            <li><a href="index.html#">Dropdown Menu 1</a></li>
-                            <li><a href="index.html#">Dropdown Menu 2</a></li>
-                            <li><a href="index.html#">Dropdown Menu 3</a></li>
-                            <li class="dropdown"><a href="index.html#">Dropdown Menu 4</a>
-                                <ul>
-                                    <li><a href="index.html#">Dropdown Menu level 2</a></li>
-                                    <li><a href="index.html#">Dropdown Menu level 2</a></li>
-                                    <li><a href="index.html#">Dropdown Menu Level 3</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="index.html#">Dropdown Lorem 5</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="contact-us.html">Contact</a></li>
-                </ul>
-            </div><!-- /.Side-menu -->
-            
-            <h2>Visit Us</h2>
-            <ul class="info">
-                <li>Restaurant St, Delicious City, <br>London 9578, UK</li>
-                <li>Open: 9.30 am - 2.30pm</li>
-                <li><a href="mailto:booking@domainame.com">booking@domainame.com</a></li>
-            </ul>
-            <div class="separator"><span></span></div>
-            <div class="booking-info">
-                <div class="bk-title">Booking request</div>
-                <div class="bk-no"><a href="tel:+88-123-123456">+88-123-123456</a></div>
-            </div>
-        
-        </div><!-- / Hidden Bar Wrapper -->
-    </section>
-    <!-- / Hidden Bar -->
-
-    <!--Info Back Drop-->
-    <div class="info-back-drop"></div>
-    
-    <!-- Hidden Bar -->
-    <section class="info-bar">
-        <div class="inner-box">
-            <div class="cross-icon"><span class="far fa-close"></span></div>
-            <div class="logo-box"><a href="index.html" title="Delici - Restaurants HTML Template"><img src="images/resource/sidebar-logo.png" alt="" title="Delici - Restaurants HTML Template"></a></div>
-            <div class="image-box"><img src="images/resource/sidebar-image.jpg" alt="" title=""></div>
-
-            <h2>Visit Us</h2>
-            <ul class="info">
-                <li>Restaurant St, Delicious City, <br>London 9578, UK</li>
-                <li>Open: 9.30 am - 2.30pm</li>
-                <li><a href="mailto:booking@domainame.com">booking@domainame.com</a></li>
-            </ul>
-            <div class="separator"><span></span></div>
-            <div class="booking-info">
-                <div class="bk-title">Booking request</div>
-                <div class="bk-no"><a href="tel:+88-123-123456">01819-342634</a></div>
-            </div>
-        </div>
-    </section>
-    <!--End Hidden Bar -->
-
-    <!-- Banner Section -->
-    <section class="hero-banner-section">
-        <div class="hero-bg-overlay"></div>
-                        <div class="auto-container">
-            <div class="row align-items-center">
-                <!-- Left Side - Content -->
-                <div class="hero-content-col col-lg-6 col-md-12">
-                    <div class="hero-content">
-                        <div class="hero-badge">Indian & Thai Fusion</div>
-                        <h1 class="hero-title">
-                            <span class="hero-title-main">Aromatic Spices</span>
-                            <span class="hero-title-accent">Meet Exotic Flavors</span>
-                        </h1>
-                        <p class="hero-description">Experience the perfect fusion of Indian and Thai cuisine at Handi Restaurant. Where traditional spices blend with exotic flavors, creating an unforgettable culinary journey that celebrates the best of both worlds.</p>
-                        <div class="hero-buttons">
-                            <a href="menu-list-1.html" class="hero-btn hero-btn-primary">
-                                <span>View Menu</span>
-                            </a>
-                            <a href="reservation-opentable.html" class="hero-btn hero-btn-secondary">
-                                <span>Book Table</span>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                <!-- Right Side - Video -->
-                <div class="hero-video-col col-lg-6 col-md-12">
-                    <div class="hero-video-wrapper">
-                        <video id="bannerVideo" autoplay muted loop playsinline webkit-playsinline preload="auto" class="hero-video" style="opacity: 0;">
-                            <source src="images/nav-video.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-    </section>
-    <!--End Banner Section -->
-
-    <!--We Offer Section-->
-    <section class="we-offer-section">
-        <div class="left-bot-bg"><img src="images/background/bg-1.png" alt="" title=""></div>
-        <div class="right-top-bg"><img src="images/background/bg-2.png" alt="" title=""></div>
+    <!-- Branch Selection Section -->
+    <section class="branch-selection-section">
         <div class="auto-container">
-            <div class="title-box centered">
-                <div class="subtitle"><span>Flavors for royalty</span></div>
-                <div class="pattern-image"><img src="images/icons/separator.svg" alt="" title=""></div>
-                <h2>We Offer Top Notch</h2>
-                <div class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry lorem Ipsum has been the industrys standard dummy text ever.</div>
+            <div class="branch-title-box">
+                <div class="subtitle">Choose Your Location</div>
+                <h1>Select Your Branch</h1>
+                <div class="text">Visit us at any of our three locations. Each branch offers the same authentic Indian & Thai fusion cuisine experience.</div>
             </div>
-            <div class="row justify-content-center clearfix">
-                <!--Block-->
-                <div class="offer-block col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="0ms">
-                        <div class="image"><a href="menu-list-1.html"><img src="images/resource/offer-image-1.jpg" alt=""></a></div>
-                        <h3><a href="menu-list-1.html">Breakfast</a></h3>
-                        <div style="font-size: 12px; color: #999; margin-top: 5px; font-style: italic;">only available at laboni branch</div>
-                        <div class="more-link"><a href="menu-list-1.html">view menu</a></div>
-                    </div>
-                </div>
-
-                <!--Block-->
-                <div class="offer-block col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="300ms">
-                        <div class="image"><a href="menu-list-2.html"><img src="images/resource/offer-image-2.png" alt=""></a></div>
-                        <h3><a href="menu-list-2.html">Appetizers</a></h3>
-                        <div class="more-link"><a href="menu-list-2.html">view menu</a></div>
-                    </div>
-                </div>
-
-                <!--Block-->
-                <div class="offer-block col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="600ms">
-                        <div class="image"><a href="menu-list-3.html"><img src="images/resource/offer-image-3.png" alt=""></a></div>
-                        <h3><a href="menu-list-3.html">Drinks</a></h3>
-                        <div class="more-link"><a href="menu-list-3.html">view menu</a></div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!--Story Section-->
-    <section class="story-section">
-        <div class="left-bg"><img src="images/background/bg-3.png" alt="" title=""></div>
-        <div class="container-fluid">
-            <div class="row clearfix">
-                <!--Col-->
-                <div class="text-col col-xl-5 col-lg-5 col-md-12 col-sm-12">
-                    <div class="inner wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="0ms">
-                        <div class="title-box centered">
-                            <div class="subtitle"><span>Our story</span></div>
-                            <div class="pattern-image"><img src="images/icons/separator.svg" alt="" title=""></div>
-                            <h2>Every Flavor Tells a Story</h2>
-                            <div class="text">Handi Restaurant has a variety of mixed dishes prepared in a healthy environment to ensure a delicious</div>
-                        </div>
-                        <div class="booking-info">
-                            <div class="bk-title">Book Through Call</div>
-                            <div class="bk-no"><a href="tel:+80-400-123456">01819-342634</a></div>
-                            
-                            <div class="link-box">
-                                <a href="about.html" class="theme-btn btn-style-two clearfix">
-                                    <span class="btn-wrap">
-                                        <span class="text-one">Read More</span>
-                                        <span class="text-two">Read More</span>
-                                    </span>
-                                </a>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-                <!--Col-->
-                <div class="image-col col-xl-7 col-lg-7 col-md-12 col-sm-12">
-                    <div class="inner wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="0ms">
-                        <div class="images parallax-scene-1">
-                            <div class="image" data-depth="0.15"><img src="images/resource/image-1.jpg" alt=""></div>
-                            <!-- <div class="image" data-depth="0.30"><img src="images/resource/image-2.jpg" alt=""></div> -->
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!--Special Offer Section-->
-    <section class="special-offer">
-        <div class="outer-container">
-            <div class="auto-container">
-                <div class="title-box centered">
-                    <div class="subtitle"><span>special offer</span></div>
-                    <div class="pattern-image"><img src="images/icons/separator.svg" alt="" title=""></div>
-                    <h2>Best Specialties</h2>
-                </div>
-                <div class="row clearfix dish-gallery-slider owl-theme owl-carousel">
-                    <!--Menu Item-->
-                    <div class="offer-block-two col-lg-3 col-md-6 col-sm-6">
-                        <div class="inner-box">
-                            <div class="image"><a href="index.html#"><img src="images/resource/menu-image-11.jpg" alt=""></a></div>
-                            <h4><a href="menu-list-1.html">King Prawn</a></h4>
-                            <!-- <div class="text desc">Avocados with crab meat, red onion, crab salad red bell pepper...</div> -->
-                            <div class="price">250 tk</div>
-                        </div>
-                    </div>
-
-                    <!--Menu Item-->
-                    <div class="offer-block-two col-lg-3 col-md-6 col-sm-6">
-                        <div class="inner-box">
-                            <div class="image"><a href="index.html#"><img src="images/resource/menu-image-12.jpg" alt=""></a></div>
-                            <h4><a href="menu-list-2.html">Hyderabadi Biryani</a></h4>
-                            <!-- <div class="text desc">Tomatoes, green bell pepper, sliced cucumber onion, olives...</div> -->
-                            <div class="price">450 tk</div>
-                        </div>
-                    </div>
-
-                    <!--Menu Item-->
-                    <div class="offer-block-two col-lg-3 col-md-6 col-sm-6">
-                        <div class="inner-box">
-                            <div class="image"><a href="index.html#"><img src="images/resource/menu-image-13.jpg" alt=""></a></div>
-                            <h4><a href="menu-list-3.html">Fish Karahi</a></h4>
-                            <!-- <div class="text desc">Avocados with crab meat, red onion, crab salad stuffed bell pepper...</div> -->
-                            <div class="price">150 tk</div>
-                        </div>
-                    </div>
-
-                    <!--Menu Item-->
-                    <div class="offer-block-two col-lg-3 col-md-6 col-sm-6">
-                        <div class="inner-box">
-                            <div class="image"><a href="index.html#"><img src="images/resource/menu-image-14.jpg" alt=""></a></div>
-                            <h4><a href="menu-list-4.html">Fried Chicken</a></h4>
-                            <!-- <div class="text desc">Vegetables, cheeses, ground meats, tomato sauce, seasonings...</div> -->
-                            <div class="price">120 tk</div>
-                        </div>
-                    </div>
-
-                    <!--Menu Item-->
-                    <div class="offer-block-two col-lg-3 col-md-6 col-sm-6">
-                        <div class="inner-box">
-                            <div class="image"><a href="index.html#"><img src="images/resource/menu-image-15.jpg" alt=""></a></div>
-                            <h4><a href="menu-list-1.html">Chicken Grill</a></h4>
-                            <!-- <div class="text desc">Avocados with crab meat, red onion, crab salad red bell pepper...</div> -->
-                            <div class="price">150 tk</div>
-                        </div>
-                    </div>
-
-                    <!--Menu Item-->
-                    <div class="offer-block-two col-lg-3 col-md-6 col-sm-6">
-                        <div class="inner-box">
-                            <div class="image"><a href="index.html#"><img src="images/resource/menu-image-16.jpg" alt=""></a></div>
-                            <h4><a href="menu-list-2.html">Soup</a></h4>
-                            <!-- <div class="text desc">Tomatoes, green bell pepper, sliced cucumber onion, olives...</div> -->
-                            <div class="price">100 tk</div>
-                        </div>
-                    </div>
-
-                    <!--Menu Item-->
-                    <div class="offer-block-two col-lg-3 col-md-6 col-sm-6">
-                        <div class="inner-box">
-                            <div class="image"><a href="index.html#"><img src="images/resource/menu-image-17.jpg" alt=""></a></div>
-                            <h4><a href="menu-list-3.html">Chicken Boti Kebab</a></h4>
-                            <!-- <div class="text desc">Avocados with crab meat, red onion, crab salad stuffed bell pepper...</div> -->
-                            <div class="price">150 tk</div>
-                        </div>
-                    </div>
-
-                    <!--Menu Item-->
-                    <div class="offer-block-two col-lg-3 col-md-6 col-sm-6">
-                        <div class="inner-box">
-                            <div class="image"><a href="index.html#"><img src="images/resource/menu-image-18.jpg" alt=""></a></div>
-                            <h4><a href="menu-list-4.html">Oven Baked Pasta</a></h4>
-                            <!-- <div class="text desc">Vegetables, cheeses, ground meats, tomato sauce, seasonings...</div> -->
-                            <div class="price">120 tk</div>
-                        </div>
-                    </div>
-
+            
+            <div class="branch-cards">
+                <!-- Chittagong Branch -->
+                <div class="branch-card" onclick="window.location.href='chittagong-branch.html'">
+                    <div class="icon"><i class="far fa-map-marker-alt"></i></div>
+                    <h3>Chittagong Branch</h3>
+                    <div class="location">M.M Ali Road, Dampara Police line, Chittagong</div>
+                    <a href="chittagong-branch.html" class="btn-visit">Visit Branch</a>
                 </div>
                 
-                <div class="lower-link-box text-center">
-                    <a href="menu-list-1.html" class="theme-btn btn-style-two clearfix">
-                        <span class="btn-wrap">
-                            <span class="text-one">view all menu</span>
-                            <span class="text-two">view all menu</span>
-                        </span>
-                    </a>
+                <!-- Cox's Bazar Branch -->
+                <div class="branch-card" onclick="window.location.href='coxsbazar-branch.html'">
+                    <div class="icon"><i class="far fa-map-marker-alt"></i></div>
+                    <h3>Cox's Bazar Branch</h3>
+                    <div class="location">Hotel Ovishar, Sea Laboni Point, Laboni Beach Rd, Cox's Bazar</div>
+                    <a href="coxsbazar-branch.html" class="btn-visit">Visit Branch</a>
                 </div>
                 
-            </div>
-        </div>
-    </section>
-
-    <!--Testimonials Section-->
-    <section class="testimonials-section">
-        <div class="image-layer" style="background-image: url(images/background/image-2.jpg);"></div>
-        <div class="auto-container">
-            <div class="carousel-box">
-                <div class="testi-top owl-theme owl-carousel">
-                    <div class="slide-item">
-                        <div class="slide-content">
-                            <div class="quotes">”</div>
-                            <div class="text quote-text">I wanted to thank you for inviting me down for that amazing dinner the other night. The food was extraordinary.</div>
-                        </div>
-                    </div>
-                    <div class="slide-item">
-                        <div class="slide-content">
-                            <div class="quotes">”</div>
-                            <div class="text quote-text">I wanted to thank you for inviting me down for that amazing dinner the other night. The food was extraordinary.</div>
-                        </div>
-                    </div>
-                    <div class="slide-item">
-                        <div class="slide-content">
-                            <div class="quotes">”</div>
-                            <div class="text quote-text">I wanted to thank you for inviting me down for that amazing dinner the other night. The food was extraordinary.</div>
-                        </div>
-                    </div>
-                    <div class="slide-item">
-                        <div class="slide-content">
-                            <div class="quotes">”</div>
-                            <div class="text quote-text">I wanted to thank you for inviting me down for that amazing dinner the other night. The food was extraordinary.</div>
-                        </div>
-                    </div>
-                    <div class="slide-item">
-                        <div class="slide-content">
-                            <div class="quotes">”</div>
-                            <div class="text quote-text">I wanted to thank you for inviting me down for that amazing dinner the other night. The food was extraordinary.</div>
-                        </div>
-                    </div>
-                    <div class="slide-item">
-                        <div class="slide-content">
-                            <div class="quotes">”</div>
-                            <div class="text quote-text">I wanted to thank you for inviting me down for that amazing dinner the other night. The food was extraordinary.</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="separator"><span></span><span></span><span></span></div>
-                <div class="thumbs-carousel-box">
-                    <div class="testi-thumbs owl-theme owl-carousel">
-                        <div class="slide-item">
-                            <div class="image"><img src="images/resource/author-thumb-1.jpg"  alt=""></div>
-                            <div class="auth-title">Sam Jhonson</div>
-                        </div>
-                        <div class="slide-item">
-                            <div class="image"><img src="images/resource/author-thumb-2.jpg"  alt=""></div>
-                            <div class="auth-title">Ian Botham</div>
-                        </div>
-                        <div class="slide-item">
-                            <div class="image"><img src="images/resource/author-thumb-3.jpg"  alt=""></div>
-                            <div class="auth-title">Dan Bitson</div>
-                        </div>
-                        <div class="slide-item">
-                            <div class="image"><img src="images/resource/author-thumb-1.jpg"  alt=""></div>
-                            <div class="auth-title">Sam Jhonson</div>
-                        </div>
-                        <div class="slide-item">
-                            <div class="image"><img src="images/resource/author-thumb-2.jpg"  alt=""></div>
-                            <div class="auth-title">Ian Botham</div>
-                        </div>
-                        <div class="slide-item">
-                            <div class="image"><img src="images/resource/author-thumb-3.jpg"  alt=""></div>
-                            <div class="auth-title">Dan Bitson</div>
-                        </div>
-                    </div>
+                <!-- Dhaka Branch -->
+                <div class="branch-card" onclick="window.location.href='dhaka-branch.html'">
+                    <div class="icon"><i class="far fa-map-marker-alt"></i></div>
+                    <h3>Dhaka Branch</h3>
+                    <div class="location">House no -108, Gulshan Avenue Road, Flamingo Point, 3rd Floor (Adjacent to Azad Masjid) Dhaka</div>
+                    <a href="dhaka-branch.html" class="btn-visit">Visit Branch</a>
                 </div>
             </div>
         </div>
     </section>
-
-    <!--Reservation Section-->
-    <section class="reserve-section">
-        <div class="auto-container">
-            <div class="outer-box">
-                <div class="row clearfix">
-                    <div class="reserv-col col-lg-8 col-md-12 col-sm-12">
-                        <div class="inner">
-                            <div class="title">
-                                <h2>Online Reservation</h2>
-                                <div class="request-info">Booking request <a href="index.html#">01819-342634</a> or fill out the order form</div>
-                            </div>
-                            <div class="default-form reservation-form">
-                                <form method="post" action="index.html">
-                                    <div class="row clearfix">
-                                        <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                                            <div class="field-inner">
-                                                <input type="text" name="fieldname" value="" placeholder="Your Name" required>
-                                            </div>
-                                        </div>
-                                        <div class="form-group col-lg-6 col-md-6 col-sm-12">
-                                            <div class="field-inner">
-                                                <input type="text" name="fieldname" value="" placeholder="Phone Number" required>
-                                            </div>
-                                        </div>
-                                        <div class="form-group col-lg-4 col-md-6 col-sm-12">
-                                            <div class="field-inner">
-                                                <span class="alt-icon far fa-user"></span>
-                                                <select class="l-icon">
-                                                    <option>1 Person</option>
-                                                    <option>2 Person</option>
-                                                    <option>3 Person</option>
-                                                    <option>4 Person</option>
-                                                    <option>5 Person</option>
-                                                    <option>6 Person</option>
-                                                    <option>7 Person</option>
-                                                </select>
-                                                <span class="arrow-icon far fa-angle-down"></span>
-                                            </div>
-                                        </div>
-                                        <div class="form-group col-lg-4 col-md-6 col-sm-12">
-                                            <div class="field-inner">
-                                                <span class="alt-icon far fa-calendar"></span>
-                                                <input class="l-icon datepicker" type="text" name="fieldname" value="" placeholder="DD-MM-YYYY" required readonly>
-                                                <span class="arrow-icon far fa-angle-down"></span>
-                                            </div>
-                                        </div>
-                                        <div class="form-group col-lg-4 col-md-12 col-sm-12">
-                                            <div class="field-inner">
-                                                <span class="alt-icon far fa-clock"></span>
-                                                <select class="l-icon">
-                                                    <option>08 : 00 am</option>
-                                                    <option>09 : 00 am</option>
-                                                    <option>10 : 00 am</option>
-                                                    <option>11 : 00 am</option>
-                                                    <option>12 : 00 pm</option>
-                                                    <option>01 : 00 pm</option>
-                                                    <option>02 : 00 pm</option>
-                                                    <option>03 : 00 pm</option>
-                                                    <option>04 : 00 pm</option>
-                                                    <option>05 : 00 pm</option>
-                                                    <option>06 : 00 pm</option>
-                                                    <option>07 : 00 pm</option>
-                                                    <option>08 : 00 pm</option>
-                                                    <option>09 : 00 pm</option>
-                                                    <option>10 : 00 pm</option>
-                                                </select>
-                                                <span class="arrow-icon far fa-angle-down"></span>
-                                            </div>
-                                        </div>
-                                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
-                                            <div class="field-inner">
-                                                <textarea name="fieldname" placeholder="Message" required></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
-                                            <div class="field-inner">
-                                                
-                                                <button type="submit" class="theme-btn btn-style-one clearfix">
-                                                    <span class="btn-wrap">
-                                                        <span class="text-one">book a table</span>
-                                                        <span class="text-two">book a table</span>
-                                                    </span>
-                                                </button>
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="info-col col-lg-4 col-md-12 col-sm-12">
-                        <div class="inner">
-                            <div class="title">
-                                <h2>Contact Us</h2>
-                            </div>
-                            <div class="data">
-                                <div class="booking-info">
-                                    <div class="bk-title">Booking request</div>
-                                    <div class="bk-no"><a href="tel:+88-123-123456">01819-342634</a></div>
-                                </div>
-                                <div class="separator"><span></span></div>
-                                <ul class="info">
-                                    <li><strong>Locations</strong><br>
-                                        1. M.M Ali Road,Dampara Police line, Chittagong<br>
-                                        2. Hotel Ovishar, Sea Laboni Point, Laboni Beach Rd, Cox's Bazar<br>
-                                        3. House no -108, Gulshan Avenue Road, Flamingo Point, 3rd Floor (Adjacent to Azad Masjid) Dhaka
-                                    </li>
-                                    <li><strong>Lunch Time</strong><br>Monday to Sunday <br>11.00 am - 2.30pm</li>
-                                    <li><strong>Dinner Time</strong><br>Monday to Sunday <br>05.00 pm - 10.00pm</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-    <!--Intro Section-->
-    <section class="intro-section">
-        <div class="image-layer" style="background-image: url(images/background/image-3.jpg);"></div>
-        <div class="auto-container">
-            <div class="content-box">
-                <div class="title-box centered">
-                    <div class="subtitle"><span>amazing experience</span></div>
-                    <div class="pattern-image"><img src="images/icons/separator.svg" alt="" title=""></div>
-                    <h2>Watch Our Video</h2>
-                </div>
-                <div class="play-btn"><a href="https://www.youtube.com/watch?v=dZ9O_l1dIzs" class="lightbox-image theme-btn"><span class="icon fal fa-play"><i class="ripple"></i></span></a></div>
-                <div class="separator"><span></span><span></span><span></span></div>
-                <h3>A modern restaurant with a menu that will make your mouth water.</h3>
-                <!-- <div class="auth-title">Willium Joe - Master chef</div> -->
-            </div>
-
-            <div class="fact-counter d-none">
-                <div class="row clearfix">
-                    <div class="fact-block col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner clearfix">
-                            <div class="fact-count"><div class="count-box"><span class="count-text" data-stop="150" data-speed="2000">0</span><i>+</i></div></div>
-                            <div class="fact-title">daily <br>order</div>
-                        </div>
-                    </div>
-                    <div class="fact-block col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner clearfix">
-                            <div class="fact-count"><div class="count-box"><span class="count-text" data-stop="82" data-speed="1500">0</span><i>+</i></div></div>
-                            <div class="fact-title">Special <br>Dishes</div>
-                        </div>
-                    </div>
-                    <div class="fact-block col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner clearfix">
-                            <div class="fact-count"><div class="count-box"><span class="count-text" data-stop="35" data-speed="1000">0</span><i>+</i></div></div>
-                            <div class="fact-title">expert <br>chef</div>
-                        </div>
-                    </div>
-                    <div class="fact-block col-lg-3 col-md-6 col-sm-12">
-                        <div class="inner clearfix">
-                            <div class="fact-count"><div class="count-box"><span class="count-text" data-stop="10" data-speed="1000">0</span><i>+</i></div></div>
-                            <div class="fact-title">awards <br>won</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!--Recnt Updates Section-->
-    <section class="news-section">
-        <div class="auto-container">
-            <div class="title-box centered">
-                <div class="subtitle"><span>recent updates</span></div>
-                <div class="pattern-image"><img src="images/icons/separator.svg" alt="" title=""></div>
-                <h2>Upcoming Event</h2>
-            </div>
-            <div class="row justify-content-center clearfix">
-                <!--Block-->
-                <div class="news-block col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="0ms">
-                        <div class="image-box">
-                            <div class="date"><span>15/09/2022</span></div>
-                            <div class="image"><a href="index.html#"><img src="images/resource/news-2.jpg" alt=""></a></div>
-                            <div class="over-content">
-                                <div class="cat">Food, flavour</div>
-                                <h4><a href="https://kalanidhithemes.com/live-preview/landing-page/delici/all-demo/Delici-Defoult/menu-list.html">Flavour so good you’ll try to eat with your eyes.</a></h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Block-->
-                <div class="news-block col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="300ms">
-                        <div class="image-box">
-                            <div class="date"><span>08/09/2022</span></div>
-                            <div class="image"><a href="index.html#"><img src="images/resource/news-1.jpg" alt=""></a></div>
-                            <div class="over-content">
-                                <div class="cat">healthy food</div>
-                                <h4><a href="https://kalanidhithemes.com/live-preview/landing-page/delici/all-demo/Delici-Defoult/menu-list.html">Flavour so good you’ll try to eat with your eyes.</a></h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--Block-->
-                <div class="news-block col-lg-4 col-md-6 col-sm-12">
-                    <div class="inner-box wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="600ms">
-                        <div class="image-box">
-                            <div class="date"><span>03/09/2022</span></div>
-                            <div class="image"><a href="index.html#"><img src="images/resource/news-3.jpg" alt=""></a></div>
-                            <div class="over-content">
-                                <div class="cat">recipie</div>
-                                <h4><a href="https://kalanidhithemes.com/live-preview/landing-page/delici/all-demo/Delici-Defoult/menu-list.html">Flavour so good you’ll try to eat with your eyes.</a></h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            
-            <div class="lower-link-box text-center">
-                <a href="index.html#" class="theme-btn btn-style-two clearfix">
-                    <span class="btn-wrap">
-                        <span class="text-one">view our blog</span>
-                        <span class="text-two">view our blog</span>
-                    </span>
-                </a>
-            </div>
-            
-        </div>
-    </section>
+    <!--End Branch Selection Section -->
 
     <!--Main Footer-->
     <footer class="main-footer">
@@ -1234,7 +275,7 @@
                     <div class="footer-col info-col col-lg-6 col-md-12 col-sm-12">
                         <div class="inner wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
                             <div class="content">
-                                <div class="logo"><a href="index.html" title="Delici - Restaurants HTML Template"><img src="images/logo.png" alt="" title="Delici - Restaurants HTML Template"></a></div>
+                                <div class="logo"><a href="index.html" title="Handi - Taste Of Indian Cuisine"><img src="images/logo.png" alt="" title="Handi - Taste Of Indian Cuisine"></a></div>
                                 <div class="info">
                                     <ul>
                                         <li>1. M.M Ali Road,Dampara Police line, Chittagong</li>
@@ -1245,25 +286,6 @@
                                         <li>Open : 09:00 am - 01:00 pm</li>
                                     </ul>
                                 </div>
-                                <div class="separator"><span></span><span></span><span></span></div>
-                                <div class="newsletter">
-                                    <h3>Get News & Offers</h3>
-                                    <div class="text">Subscribe us & Get <span>25% Off.</span></div>
-                                    <div class="newsletter-form">
-                                        <form method="post" action="index.html">
-                                            <div class="form-group">
-                                                <span class="alt-icon far fa-envelope"></span>
-                                                <input type="email" name="email" value="" placeholder="Your email" required>
-                                                <button type="submit" class="theme-btn btn-style-one clearfix">
-                                                    <span class="btn-wrap">
-                                                        <span class="text-one">subscribe</span>
-                                                        <span class="text-two">subscribe</span>
-                                                    </span>
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -1271,7 +293,7 @@
                     <div class="footer-col links-col col-lg-3 col-md-6 col-sm-12">
                         <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                             <ul class="links">
-                                <li><a href="https://kalanidhithemes.com/live-preview/landing-page/delici/all-demo/Delici-Defoult/home.html">Home</a></li>
+                                <li><a href="home.html">Home</a></li>
                                 <li><a href="menu-list-1.html">Menus</a></li>
                                 <li><a href="about.html">About us</a></li>
                                 <li><a href="our-chef.html">Our chefs</a></li>
@@ -1318,192 +340,5 @@
 <script src="js/wow.js"></script>
 <script src="js/parallax.min.js"></script>
 <script src="js/custom-script.js"></script>
-<script>
-// Enhanced Video Playback - Multiple Attempts
-(function() {
-    let attempts = 0;
-    const maxAttempts = 10;
-    
-    function initVideo() {
-        const video = document.getElementById('bannerVideo');
-        if (!video) {
-            attempts++;
-            if (attempts < maxAttempts) {
-                setTimeout(initVideo, 200);
-            }
-            return;
-        }
-        
-        // Ensure video properties are set
-        video.muted = true;
-        video.loop = true;
-        video.playsInline = true;
-        video.setAttribute('muted', '');
-        video.setAttribute('loop', '');
-        video.setAttribute('playsinline', '');
-        video.setAttribute('webkit-playsinline', '');
-        video.setAttribute('autoplay', '');
-        video.setAttribute('preload', 'auto');
-        
-        // Function to play video
-        function playVideo() {
-            if (video.paused || video.ended) {
-                const playPromise = video.play();
-                if (playPromise !== undefined) {
-                    playPromise.then(function() {
-                        console.log('Video is playing');
-                        video.style.opacity = '1';
-                    }).catch(function(error) {
-                        console.log('Play attempt failed:', error);
-                        // Retry after a short delay
-                        setTimeout(playVideo, 500);
-                    });
-                }
-            }
-        }
-        
-        // Try to play when video can play
-        video.addEventListener('loadeddata', function() {
-            playVideo();
-        }, { once: true });
-        
-        video.addEventListener('canplay', function() {
-            playVideo();
-        }, { once: true });
-        
-        video.addEventListener('canplaythrough', function() {
-            playVideo();
-        }, { once: true });
-        
-        video.addEventListener('loadedmetadata', function() {
-            playVideo();
-        }, { once: true });
-        
-        // Ensure video loops
-        video.addEventListener('ended', function() {
-            video.currentTime = 0;
-            playVideo();
-        });
-        
-        // Handle video errors
-        video.addEventListener('error', function(e) {
-            console.log('Video error:', video.error);
-        });
-        
-        // Initial play attempt
-        if (video.readyState >= 2) {
-            playVideo();
-        } else {
-            video.load();
-        }
-        
-        // Try playing on user interaction (fallback)
-        const playOnInteraction = function() {
-            playVideo();
-        };
-        document.addEventListener('click', playOnInteraction, { once: true });
-        document.addEventListener('touchstart', playOnInteraction, { once: true });
-        document.addEventListener('scroll', playOnInteraction, { once: true });
-        
-        // Final attempt after page load
-        if (document.readyState === 'complete') {
-            setTimeout(playVideo, 1000);
-        } else {
-            window.addEventListener('load', function() {
-                setTimeout(playVideo, 1000);
-            });
-        }
-    }
-    
-    // Initialize when DOM is ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initVideo);
-    } else {
-        initVideo();
-    }
-    
-    // Also try after all scripts load
-    window.addEventListener('load', function() {
-        setTimeout(initVideo, 500);
-    });
-})();
-
-// Special Offer Menu Slider - Mobile Only
-(function() {
-    function handleMenuSlider() {
-        var $slider = $('.special-offer .dish-gallery-slider');
-        if (!$slider.length || typeof jQuery === 'undefined' || !$.fn.owlCarousel) return;
-        
-        function checkAndHandle() {
-            var isMobile = window.innerWidth < 992;
-            var isInitialized = $slider.hasClass('owl-loaded');
-            
-            if (isMobile) {
-                // Mobile: Ensure carousel is initialized
-                if (!isInitialized) {
-                    // Destroy if exists and reinitialize
-                    if ($slider.data('owl.carousel')) {
-                        $slider.trigger('destroy.owl.carousel');
-                    }
-                    $slider.owlCarousel({
-                        loop: true,
-                        margin: 20,
-                        nav: true,
-                        smartSpeed: 700,
-                        autoplay: true,
-                        autoplayTimeout: 5000,
-                        navText: ['<span class="icon fa-light fa-angle-left"></span>', '<span class="icon fa-light fa-angle-right"></span>'],
-                        responsive: {
-                            0: {
-                                items: 1
-                            },
-                            600: {
-                                items: 2,
-                                margin: 15
-                            },
-                            768: {
-                                items: 2,
-                                margin: 20
-                            }
-                        }
-                    });
-                }
-            } else {
-                // Desktop: Destroy carousel and restore grid
-                if (isInitialized) {
-                    $slider.trigger('destroy.owl.carousel');
-                    $slider.removeClass('owl-carousel owl-loaded owl-drag owl-grab');
-                    $slider.find('.owl-stage-outer').children().unwrap();
-                    $slider.find('.owl-nav').remove();
-                    $slider.find('.owl-dots').remove();
-                }
-            }
-        }
-        
-        // Wait a bit for existing scripts to load, then check
-        setTimeout(function() {
-            checkAndHandle();
-            
-            // Check on resize
-            var resizeTimer;
-            $(window).on('resize', function() {
-                clearTimeout(resizeTimer);
-                resizeTimer = setTimeout(checkAndHandle, 250);
-            });
-        }, 500);
-    }
-    
-    // Initialize when jQuery is ready
-    if (typeof jQuery !== 'undefined') {
-        $(document).ready(handleMenuSlider);
-        $(window).on('load', handleMenuSlider);
-    } else {
-        window.addEventListener('load', function() {
-            setTimeout(handleMenuSlider, 1000);
-        });
-    }
-})();
-</script>
 </body>
-</html>
 </html>
