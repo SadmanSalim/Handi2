@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HANDI | Fine Bengali Cuisine</title>
+    <meta name="description" content="Experience the art of Bengali gastronomy at Handi - where tradition meets contemporary elegance.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #C9A86C;
+            --gold-light: #E8D5B5;
+            --gold-dark: #8B7355;
+            --black: #0A0A0A;
+            --black-light: #141414;
+            --black-lighter: #1E1E1E;
+            --white: #FAFAFA;
+            --white-dim: #A0A0A0;
+            --cream: #F5F0E8;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--black);
+            color: var(--white);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Noise texture overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        /* Custom cursor - desktop only */
+        .cursor {
+            width: 20px;
+            height: 20px;
+            border: 1px solid var(--gold);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.15s ease, background 0.15s ease;
+            transform: translate(-50%, -50%);
+        }
+
+        .cursor.hover {
+            transform: translate(-50%, -50%) scale(2);
+            background: rgba(201, 168, 108, 0.1);
+        }
+
+        /* Typography */
+        .serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .text-gold {
+            color: var(--gold);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            mix-blend-mode: difference;
+        }
+
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile Menu Button */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 200;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 28px;
+            height: 1px;
+            background: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--black);
+            z-index: 99;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu a {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+        }
+
+        .mobile-menu.active a {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mobile-menu.active a:nth-child(1) { transition-delay: 0.1s; }
+        .mobile-menu.active a:nth-child(2) { transition-delay: 0.2s; }
+        .mobile-menu.active a:nth-child(3) { transition-delay: 0.3s; }
+
+        .mobile-menu a:hover {
+            color: var(--gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding: 0 5%;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, var(--black) 0%, var(--black-light) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            width: 100%;
+        }
+
+        .hero-subtitle {
+            font-size: 0.7rem;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeUp 1s ease 0.3s forwards;
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 12vw, 10rem);
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            line-height: 0.9;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeUp 1s ease 0.5s forwards;
+        }
+
+        .hero-tagline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            font-weight: 300;
+            font-style: italic;
+            color: var(--white-dim);
+            opacity: 0;
+            animation: fadeUp 1s ease 0.7s forwards;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            opacity: 0;
+            animation: fadeUp 1s ease 1s forwards;
+        }
+
+        .scroll-indicator span {
+            font-size: 0.6rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 50px;
+            background: linear-gradient(to bottom, var(--gold), transparent);
+            animation: scrollPulse 2s ease-in-out infinite;
+        }
+
+        /* Locations Section */
+        .locations {
+            padding: 6rem 5%;
+            position: relative;
+        }
+
+        .section-header {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 4rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--black-lighter);
+        }
+
+        .section-header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .section-label {
+            font-size: 0.6rem;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 300;
+            margin-top: 0.5rem;
+        }
+
+        .section-count {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 300;
+            color: var(--black-lighter);
+            line-height: 1;
+        }
+
+        /* Location Cards */
+        .location-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .location-item {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--black-lighter);
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .location-item-row {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .location-item::before {
+            content: '';
+            position: absolute;
+            left: -5%;
+            right: -5%;
+            top: 0;
+            bottom: 0;
+            background: var(--black-light);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+
+        .location-item:hover::before {
+            opacity: 1;
+        }
+
+        .location-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            color: var(--gold);
+            min-width: 40px;
+        }
+
+        .location-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-weight: 300;
+            transition: transform 0.4s ease;
+            flex: 1;
+        }
+
+        .location-item:hover .location-name {
+            transform: translateX(10px);
+        }
+
+        .location-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            color: var(--white-dim);
+            font-size: 0.8rem;
+            padding-left: calc(40px + 2rem);
+        }
+
+        .location-cta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            padding-left: calc(40px + 2rem);
+            margin-top: 0.5rem;
+        }
+
+        .arrow-icon {
+            width: 25px;
+            height: 1px;
+            background: var(--gold);
+            position: relative;
+        }
+
+        .arrow-icon::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: -3px;
+            width: 7px;
+            height: 7px;
+            border-right: 1px solid var(--gold);
+            border-top: 1px solid var(--gold);
+            transform: rotate(45deg);
+        }
+
+        /* Image Reveal on Hover - desktop only */
+        .location-image-reveal {
+            position: fixed;
+            width: 350px;
+            height: 450px;
+            pointer-events: none;
+            z-index: 50;
+            overflow: hidden;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .location-image-reveal.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .location-image-reveal img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(30%) contrast(1.1);
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 5%;
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+            background: var(--black-light);
+        }
+
+        .about-image {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4/3;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: 15px;
+            bottom: 15px;
+            border: 1px solid var(--gold);
+            opacity: 0.3;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(20%);
+        }
+
+        .about-content {
+            max-width: 600px;
+        }
+
+        .about-quote {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 300;
+            font-style: italic;
+            line-height: 1.4;
+            margin-bottom: 2rem;
+        }
+
+        .about-quote::before {
+            content: '"';
+            font-size: clamp(3rem, 8vw, 6rem);
+            color: var(--gold);
+            line-height: 0;
+            display: block;
+            margin-bottom: -0.5rem;
+            margin-left: -0.5rem;
+        }
+
+        .about-text {
+            color: var(--white-dim);
+            font-size: 0.9rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .about-signature {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .signature-line {
+            width: 50px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        .signature-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 5%;
+            text-align: center;
+        }
+
+        .contact-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 300;
+            margin-bottom: 3rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            padding: 2rem 1.5rem;
+            border: 1px solid var(--black-lighter);
+            transition: all 0.4s ease;
+        }
+
+        .contact-item:hover {
+            border-color: var(--gold);
+            background: var(--black-light);
+        }
+
+        .contact-icon {
+            width: 22px;
+            height: 22px;
+            margin: 0 auto 1rem;
+            stroke: var(--gold);
+        }
+
+        .contact-label {
+            font-size: 0.6rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--white-dim);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem 5%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            text-align: center;
+            border-top: 1px solid var(--black-lighter);
+        }
+
+        .footer-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+        }
+
+        .footer-text {
+            font-size: 0.7rem;
+            color: var(--white-dim);
+            letter-spacing: 0.1em;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            overflow-y: auto;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal {
+            width: 100%;
+            max-width: 500px;
+            background: var(--black-light);
+            transform: translateY(50px);
+            opacity: 0;
+            transition: all 0.4s ease 0.1s;
+            margin: auto;
+        }
+
+        .modal-overlay.active .modal {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .modal-image {
+            width: 100%;
+            aspect-ratio: 16/10;
+        }
+
+        .modal-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-content {
+            padding: 2rem;
+        }
+
+        .modal-close {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            width: 44px;
+            height: 44px;
+            border: 1px solid var(--white-dim);
+            background: var(--black);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 210;
+        }
+
+        .modal-close:hover {
+            border-color: var(--gold);
+            background: var(--gold);
+        }
+
+        .modal-close svg {
+            stroke: var(--white);
+            width: 18px;
+            height: 18px;
+        }
+
+        .modal-close:hover svg {
+            stroke: var(--black);
+        }
+
+        .modal-label {
+            font-size: 0.6rem;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 0.75rem;
+        }
+
+        .modal-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-specialty {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--black-lighter);
+        }
+
+        .modal-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .modal-info-item {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .modal-info-icon {
+            width: 18px;
+            stroke: var(--gold);
+            flex-shrink: 0;
+        }
+
+        .modal-info-text {
+            color: var(--white-dim);
+            font-size: 0.85rem;
+            line-height: 1.6;
+            white-space: pre-line;
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scrollPulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scaleY(1);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scaleY(0.8);
+            }
+        }
+
+        /* Tablet Styles */
+        @media (min-width: 768px) {
+            nav {
+                padding: 2rem 5%;
+            }
+
+            .locations {
+                padding: 8rem 5%;
+            }
+
+            .section-header {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-end;
+            }
+
+            .location-item {
+                flex-direction: row;
+                align-items: center;
+                padding: 2.5rem 0;
+            }
+
+            .location-item-row {
+                flex: 1;
+            }
+
+            .location-details {
+                padding-left: 0;
+                min-width: 200px;
+            }
+
+            .location-cta {
+                padding-left: 0;
+                margin-top: 0;
+                min-width: 150px;
+                opacity: 0;
+                transform: translateX(-20px);
+                transition: all 0.4s ease;
+            }
+
+            .location-item:hover .location-cta {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            .about {
+                flex-direction: row;
+                gap: 5rem;
+                padding: 8rem 5%;
+            }
+
+            .about-image {
+                flex: 1;
+                aspect-ratio: 3/4;
+            }
+
+            .about-content {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .contact {
+                padding: 8rem 5%;
+            }
+
+            .contact-grid {
+                grid-template-columns: repeat(3, 1fr);
+                max-width: 900px;
+                gap: 2rem;
+            }
+
+            footer {
+                flex-direction: row;
+                justify-content: space-between;
+                padding: 3rem 5%;
+            }
+        }
+
+        /* Desktop Styles */
+        @media (min-width: 1024px) {
+            .menu-toggle {
+                display: none !important;
+            }
+
+            .nav-links {
+                display: flex !important;
+            }
+
+            .location-item {
+                display: grid;
+                grid-template-columns: 60px 1fr 1fr 180px;
+                gap: 3rem;
+                padding: 3rem 0;
+            }
+
+            .location-item-row {
+                display: contents;
+            }
+
+            .about {
+                gap: 6rem;
+                padding: 10rem 5%;
+            }
+
+            .about-image::before {
+                top: -30px;
+                left: -30px;
+                right: 30px;
+                bottom: 30px;
+            }
+        }
+
+        /* Mobile-specific overrides */
+        @media (max-width: 767px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .location-image-reveal {
+                display: none !important;
+            }
+        }
+
+        /* Hide custom cursor on touch devices */
+        @media (hover: none) {
+            .cursor {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">HANDI</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#locations">Locations</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Locations Section -->
+    <section class="locations" id="locations">
+        <div class="section-header">
+            <div>
+                <p class="section-label">Our Establishments</p>
+                <h2 class="section-title">Locations</h2>
+            </div>
+        </div>
+
+        <div class="location-list">
+            <div class="location-item" data-location="0">
+                <div class="location-item-row">
+                    <span class="location-number">01</span>
+                    <h3 class="location-name">Chattogram</h3>
+                </div>
+                <div class="location-details">
+                    <span>GEC Circle, Chattogram</span>
+                    <span>Open Daily · 12:00 - 23:00</span>
+                </div>
+                <div class="location-cta">
+                    <span>View Details</span>
+                    <div class="arrow-icon"></div>
+                </div>
+            </div>
+
+            <div class="location-item" data-location="1">
+                <div class="location-item-row">
+                    <span class="location-number">02</span>
+                    <h3 class="location-name">Cox's Bazar</h3>
+                </div>
+                <div class="location-details">
+                    <span>Marine Drive, Cox's Bazar</span>
+                    <span>Open Daily · 11:00 - 23:00</span>
+                </div>
+                <div class="location-cta">
+                    <span>View Details</span>
+                    <div class="arrow-icon"></div>
+                </div>
+            </div>
+
+            <div class="location-item" data-location="2">
+                <div class="location-item-row">
+                    <span class="location-number">03</span>
+                    <h3 class="location-name">Dhaka</h3>
+                </div>
+                <div class="location-details">
+                    <span>Gulshan 2, Dhaka</span>
+                    <span>Open Daily · 12:00 - 23:30</span>
+                </div>
+                <div class="location-cta">
+                    <span>View Details</span>
+                    <div class="arrow-icon"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Reveal Element -->
+    <div class="location-image-reveal">
+        <img src="" alt="" id="revealImage">
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <span class="footer-logo">HANDI</span>
+        <span class="footer-text">© 2024 Handi Restaurant. All Rights Reserved.</span>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal">
+        <button class="modal-close" id="modalClose">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+        </button>
+        <div class="modal">
+            <div class="modal-image">
+                <img src="" alt="" id="modalImage">
+            </div>
+            <div class="modal-content">
+                <p class="modal-label">Location</p>
+                <h3 class="modal-title" id="modalTitle"></h3>
+                <p class="modal-specialty" id="modalSpecialty"></p>
+                <div class="modal-info">
+                    <div class="modal-info-item">
+                        <svg class="modal-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <p class="modal-info-text" id="modalAddress"></p>
+                    </div>
+                    <div class="modal-info-item">
+                        <svg class="modal-info-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                        <p class="modal-info-text" id="modalHours"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Location Data
+        const locations = [
+            {
+                name: 'Chattogram',
+                specialty: 'Signature Mezban Cuisine',
+                address: 'M.M Ali Road, Dampara Police line, Chattogram.',
+                hours: 'Open Daily: 08:00 AM - 10:00 PM\nReservations Recommended',
+                image: './images/resource/Handi-chattogram.png'
+            },
+            {
+                name: "Cox's Bazar",
+                specialty: 'Fresh Seafood Excellence',
+                address: 'Hotel Ovishar, Sea Laboni Point, Laboni Beach Rd, Cox Bazar',
+                hours: 'Open Daily: 08:00 AM - 10:00 PM\nBeachfront Dining Available',
+                image: './images/resource/Handi-coxs-bazar.webp'
+            },
+            {
+                name: 'Dhaka',
+                specialty: 'Traditional Dhaka Biriyani',
+                address: 'House no -108, Gulshan Avenue Road, Flamingo Point, 3rd Floor (Adjacent to Azad Masjid) Dhaka',
+                hours: 'Open Daily: 08:00 AM - 10:00 PM\nPrivate Dining Rooms Available',
+                image: './images/resource/Handi-dhaka.webp'
+            }
+        ];
+
+        // Mobile Menu
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Custom Cursor
+        const cursor = document.querySelector('.cursor');
+        
+        if (window.matchMedia('(hover: hover)').matches) {
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+
+            document.querySelectorAll('a, button, .location-item').forEach(el => {
+                el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+                el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+            });
+        }
+
+        // Image Reveal on Hover - Desktop only
+        const imageReveal = document.querySelector('.location-image-reveal');
+        const revealImage = document.getElementById('revealImage');
+        const locationItems = document.querySelectorAll('.location-item');
+
+        if (window.matchMedia('(hover: hover) and (min-width: 768px)').matches) {
+            locationItems.forEach(item => {
+                item.addEventListener('mouseenter', (e) => {
+                    const index = parseInt(item.dataset.location);
+                    revealImage.src = locations[index].image;
+                    imageReveal.classList.add('active');
+                });
+
+                item.addEventListener('mousemove', (e) => {
+                    imageReveal.style.left = e.clientX + 30 + 'px';
+                    imageReveal.style.top = e.clientY - 225 + 'px';
+                });
+
+                item.addEventListener('mouseleave', () => {
+                    imageReveal.classList.remove('active');
+                });
+            });
+        }
+
+        // Click to open modal
+        locationItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const index = parseInt(item.dataset.location);
+                openModal(index);
+            });
+        });
+
+        // Modal
+        const modal = document.getElementById('modal');
+        const modalClose = document.getElementById('modalClose');
+        const modalImage = document.getElementById('modalImage');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalSpecialty = document.getElementById('modalSpecialty');
+        const modalAddress = document.getElementById('modalAddress');
+        const modalHours = document.getElementById('modalHours');
+
+        function openModal(index) {
+            const location = locations[index];
+            modalImage.src = location.image;
+            modalTitle.textContent = location.name;
+            modalSpecialty.textContent = location.specialty;
+            modalAddress.textContent = location.address;
+            modalHours.textContent = location.hours;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        modalClose.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
