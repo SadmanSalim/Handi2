@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Handi - Select Your Branch</title>
+<!-- Stylesheets -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+<link rel="icon" href="images/favicon.jpg" type="image/x-icon">
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link href="css/responsive.css" rel="stylesheet">
+<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]--> 
+
+<style>
+/* Branch Selection Page Styles */
+.branch-selection-section {
+    position: relative;
+    min-height: 100vh;
+    padding: 150px 0 100px;
+    background: linear-gradient(135deg, #1a0f0a 0%, #2d1810 25%, #3d2215 50%, #2d1810 75%, #1a0f0a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.branch-selection-section .auto-container {
+    position: relative;
+    z-index: 1;
+}
+
+.branch-title-box {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.branch-title-box .subtitle {
+    display: inline-block;
+    font-size: 12px;
+    color: #ff8c00;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 600;
+    padding: 8px 22px;
+    background: rgba(255,140,0,0.15);
+    border: 1px solid rgba(255,140,0,0.3);
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+
+.branch-title-box h1 {
+    font-size: 48px;
+    color: #ffffff;
+    margin: 20px 0;
+    font-weight: 700;
+    font-family: var(--font-family-Forum);
+}
+
+.branch-title-box .text {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.branch-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.branch-card {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.branch-card:hover {
+    transform: translateY(-10px);
+    border-color: #ff8c00;
+    background: rgba(255, 140, 0, 0.1);
+    box-shadow: 0 15px 40px rgba(255, 140, 0, 0.3);
+}
+
+.branch-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.branch-card:hover::before {
+    left: 100%;
+}
+
+.branch-card .icon {
+    font-size: 60px;
+    color: #ff8c00;
+    margin-bottom: 20px;
+}
+
+.branch-card h3 {
+    font-size: 28px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.branch-card .location {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.branch-card .btn-visit {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #ff8c00;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.branch-card .btn-visit:hover {
+    background: #ff6b00;
+    transform: scale(1.05);
+}
+
+@media (max-width: 991px) {
+    .branch-selection-section {
+        padding: 120px 0 80px;
+    }
+    
+    .branch-title-box h1 {
+        font-size: 36px;
+    }
+    
+    .branch-cards {
+        gap: 20px;
+    }
+    
+    .branch-card {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .branch-selection-section {
+        padding: 100px 0 60px;
+    }
+    
+    .branch-title-box h1 {
+        font-size: 28px;
+    }
+    
+    .branch-card {
+        padding: 30px 20px;
+    }
+}
+</style>
+
+</head>
+
+<body>
+  <div class="page-wrapper"> 
+    
+    <!-- Main Header-->
+    <header class="main-header header-down">
+        <div class="header-top">
+            <div class="auto-container">
+                <div class="inner clearfix">
+                    <div class="top-left clearfix">
+                        <ul class="top-info clearfix">
+                            <li><i class="icon far fa-clock"></i> Daily : 8.00 am to 10.00 pm</li>
+                        </ul>
+                    </div>
+                    <div class="top-right clearfix">
+                        <ul class="top-info clearfix">
+                            <li><a href="tel:+11234567890"><i class="icon far fa-phone"></i>01819-342634</a></li>
+                            <li><a href="mailto:booking@restaurant.com"><i class="icon far fa-envelope"></i> handi@gmail.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header Upper -->
+        <div class="header-upper">        
+            <div class="auto-container">
+                <div class="main-box clearfix">
+                    <!--Logo-->
+                    <div class="logo-box">
+                         <div class="logo">
+                             <a href="index.html" title="Handi - Taste Of Indian Cuisine">
+                                 <img src="images/logo.png"
+                                      data-default-src="images/logo.png"
+                                      data-sticky-src="images/logo-white.png"
+                                      alt="Handi Restaurant"
+                                      title="Handi - Taste Of Indian Cuisine">
+                             </a>
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--End Main Header -->
+    
+    <!-- Branch Selection Section -->
+    <section class="branch-selection-section">
+        <div class="auto-container">
+            <div class="branch-title-box">
+                <div class="subtitle">Choose Your Location</div>
+                <h1>Select Your Branch</h1>
+                <div class="text">Visit us at any of our three locations. Each branch offers the same authentic Indian & Thai fusion cuisine experience.</div>
+            </div>
+            
+            <div class="branch-cards">
+                <!-- Chittagong Branch -->
+                <div class="branch-card" onclick="window.location.href='chittagong-branch.html'">
+                    <div class="icon"><i class="far fa-map-marker-alt"></i></div>
+                    <h3>Chittagong Branch</h3>
+                    <div class="location">M.M Ali Road, Dampara Police line, Chittagong</div>
+                    <a href="chittagong-branch.html" class="btn-visit">Visit Branch</a>
+                </div>
+                
+                <!-- Cox's Bazar Branch -->
+                <div class="branch-card" onclick="window.location.href='coxsbazar-branch.html'">
+                    <div class="icon"><i class="far fa-map-marker-alt"></i></div>
+                    <h3>Cox's Bazar Branch</h3>
+                    <div class="location">Hotel Ovishar, Sea Laboni Point, Laboni Beach Rd, Cox's Bazar</div>
+                    <a href="coxsbazar-branch.html" class="btn-visit">Visit Branch</a>
+                </div>
+                
+                <!-- Dhaka Branch -->
+                <div class="branch-card" onclick="window.location.href='dhaka-branch.html'">
+                    <div class="icon"><i class="far fa-map-marker-alt"></i></div>
+                    <h3>Dhaka Branch</h3>
+                    <div class="location">House no -108, Gulshan Avenue Road, Flamingo Point, 3rd Floor (Adjacent to Azad Masjid) Dhaka</div>
+                    <a href="dhaka-branch.html" class="btn-visit">Visit Branch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End Branch Selection Section -->
+
+    <!--Main Footer-->
+    <footer class="main-footer">
+        <div class="image-layer" style="background-image: url(images/background/image-4.jpg);"></div>
+        <div class="upper-section">
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <!--Footer Col-->
+                    <div class="footer-col info-col col-lg-6 col-md-12 col-sm-12">
+                        <div class="inner wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                            <div class="content">
+                                <div class="logo"><a href="index.html" title="Handi - Taste Of Indian Cuisine"><img src="images/logo.png" alt="" title="Handi - Taste Of Indian Cuisine"></a></div>
+                                <div class="info">
+                                    <ul>
+                                        <li>1. M.M Ali Road,Dampara Police line, Chittagong</li>
+                                        <li>2. Hotel Ovishar, Sea Laboni Point, Laboni Beach Rd, Cox's Bazar</li>
+                                        <li>3. House no -108, Gulshan Avenue Road, Flamingo Point, 3rd Floor (Adjacent to Azad Masjid) Dhaka</li>
+                                        <li><a href="mailto:booking@domainname.com">handi@gmail.com</a></li>
+                                        <li><a href="tel:+88-123-123456">Booking Request : 01819-342634</a></li>
+                                        <li>Open : 09:00 am - 01:00 pm</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Footer Col-->
+                    <div class="footer-col links-col col-lg-3 col-md-6 col-sm-12">
+                        <div class="inner wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                            <ul class="links">
+                                <li><a href="home.html">Home</a></li>
+                                <li><a href="menu-list-1.html">Menus</a></li>
+                                <li><a href="about.html">About us</a></li>
+                                <li><a href="our-chef.html">Our chefs</a></li>
+                                <li><a href="contact-us.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--Footer Col-->
+                    <div class="footer-col links-col last col-lg-3 col-md-6 col-sm-12">
+                        <div class="inner wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                            <ul class="links">
+                                <li><a href="index.html#">facebook</a></li>
+                                <li><a href="index.html#">instagram</a></li>
+                                <li><a href="index.html#">Twitter</a></li>
+                                <li><a href="index.html#">Youtube</a></li>
+                                <li><a href="index.html#">Google map</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="auto-container">
+                <div class="copyright">&copy; 2025 Handi. All Rights Reserved   |    Crafted by <a href="https://brandboosteres.com/" target="blank">Brand Boosters</a></div>
+            </div>
+        </div>
+    </footer>
+
+</div>
+<!--End pagewrapper--> 
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="icon fa fa-angle-up"></span></div>
+
+<script src="js/jquery.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/jquery.fancybox.js"></script>
+<script src="js/swiper.js"></script>
+<script src="js/owl.js"></script>
+<script src="js/appear.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/parallax.min.js"></script>
+<script src="js/custom-script.js"></script>
+</body>
+</html>
