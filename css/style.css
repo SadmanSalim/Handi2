@@ -1676,7 +1676,7 @@ body.visible-sidebar{
   position: relative;
   text-transform: uppercase;
   font-weight: 700;
-  color: var(--main-color);
+  color: #B8A075;
   font-size: var(--font-12);
   letter-spacing: 0.40em;
   line-height: 1em;
@@ -4263,7 +4263,7 @@ body.visible-sidebar{
   position: relative;
   text-transform: uppercase;
   font-weight: 700;
-  color: var(--main-color);
+  color: #B8A075;
   font-size: var(--font-12);
   letter-spacing: 0.40em;
   margin-bottom: var(--margin-bottom-0);
@@ -5569,7 +5569,7 @@ body.visible-sidebar{
   position: relative;
   font-family:var(--font-family-Forum);
   font-size: var(--font-20);
-  color: var(--main-color);
+  color: #B8A075;
 }
 
 /*** 
